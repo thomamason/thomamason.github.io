@@ -1,0 +1,17 @@
+head {
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 150%;
+}
+body {
+    background: linear-gradient (purple 50px, red 60px);
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 100%
+}
+h3 {
+    text-align: center
+}
+h4 {
+    text-align: center
+}
