@@ -4,8 +4,7 @@ head {
     font-size: 150%;
 }
 body {
-    background: linear-gradient (purple 50px, red 60px);
-    color: black;
+      color: black;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 100%
 }
@@ -82,7 +81,7 @@ header::after {
     content: '';
     display: block;
     height: 5px;
-    background-color: #444;
+    background-color: #000;
   
     position: absolute;
     top: 0;
