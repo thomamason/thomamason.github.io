@@ -78,7 +78,7 @@ header::after {
   }
   
   nav a {
-    color: #444;
+    color: #000;
     text-decoration: none;
     text-transform: lowercase;
     font-size: 14px;
