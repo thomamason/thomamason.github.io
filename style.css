@@ -25,3 +25,7 @@ rotator {
 span {
     color: white;
 }
+.blink {
+    text-decoration: blink;
+    color: #1c87c9;
+    }
