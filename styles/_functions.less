@@ -1,0 +1,25 @@
+// _functions.less
+
+.fullscreen-video {
+    position: fixed;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translateX(-50%) translateY(-50%);
+    z-index: -10;
+}
+
+#pause {
+    width: auto;
+    font-size: 10px; 
+        
+    &:hover {
+        background: rgba(221, 221, 221, 0.425);
+        color: black;
+        cursor: grab;
+    }
+}
