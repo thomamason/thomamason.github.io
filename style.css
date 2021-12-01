@@ -6,6 +6,10 @@ body {
     height: 100vh;
     overflow: hidden;
 }
+
+.outerwrapper {
+  background-color: rgb(29, 29, 29);
+}
  
 .fullscreen-video {
         position: fixed;
