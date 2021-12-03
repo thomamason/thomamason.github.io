@@ -12,7 +12,6 @@ body {
 }
  
 .fullscreen-video {
-        background-color: rgb(29, 29, 29);
         position: fixed;
         overflow: hidden;
         top: 50%;
@@ -24,10 +23,6 @@ body {
         transform: translateX(-50%) translateY(-50%);
         z-index: -10;
     }
-
-.container {
-  display: absolute;
-}
 
   #buffer {
     padding-top: 60px;
