@@ -12,6 +12,7 @@ body {
 }
  
 .fullscreen-video {
+        background-color: rgb(29, 29, 29);
         position: fixed;
         overflow: hidden;
         top: 50%;
