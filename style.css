@@ -32,3 +32,8 @@ body {
   display: flex;
   max-width: 100%;
 }
+
+
+#nate {
+    overflow: scroll;
+}
