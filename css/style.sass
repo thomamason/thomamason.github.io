@@ -1,42 +1,44 @@
-@use 'lightbox.scss';
+@use 'lightbox'
 
-body {
+body 
   background-color: rgb(29, 29, 29);
   align-content: center;
   justify-content: center;
   height: 100vh;
   overflow: scroll;
-}
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 
-.outerwrapper {
+
+body::-webkit-scrollbar 
+  display: none;
+
+
+.outerwrapper 
   background-color: rgb(29, 29, 29);
   display: flex;
   flex-direction: column;
-}
- 
-.fullscreen-video {
-        position: fixed;
-        overflow: hidden;
-        top: 50%;
-        left: 50%;
-        min-width: 100%;
-        min-height: 100%;
-        width: auto;
-        height: auto;
-        transform: translateX(-50%) translateY(-50%);
-        z-index: -10;
-}
 
-#buffer {
+
+.fullscreen-video 
+  position: fixed;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: -10;
+
+
+#buffer 
   padding-top: 60px;
-}
 
-#logo {
+
+#logo 
   display: flex;
   max-width: 100%;
-}
-
-
-#nate {
-    overflow: scroll;
-}
