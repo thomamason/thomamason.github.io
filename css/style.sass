@@ -1,14 +1,17 @@
+@use 'lightbox.scss';
+
 body {
-    background-color: rgb(29, 29, 29);
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    height: 100vh;
-    overflow: scroll;
+  background-color: rgb(29, 29, 29);
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: scroll;
 }
 
 .outerwrapper {
   background-color: rgb(29, 29, 29);
+  display: flex;
+  flex-direction: column;
 }
  
 .fullscreen-video {
@@ -22,11 +25,11 @@ body {
         height: auto;
         transform: translateX(-50%) translateY(-50%);
         z-index: -10;
-    }
+}
 
-  #buffer {
-    padding-top: 60px;
-  }
+#buffer {
+  padding-top: 60px;
+}
 
 #logo {
   display: flex;
