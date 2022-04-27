@@ -7,4 +7,8 @@ document.addEventListener("DOMContentLoaded", function(){
             video.play();
         }
     }
+    // Initialize
+    var cl = cloudinary.Cloudinary.new({  cloud_name: '<Cloud Name>' });
+    // Call
+    cl.responsive(); 
 });
