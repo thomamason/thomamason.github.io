@@ -1,34 +1,36 @@
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 4px;
-  }
+.row 
+    display: flex
+    flex-wrap: wrap
+    padding: 0 4px
+    opacity: 0.2
+    background-image: url("https://res.cloudinary.com/thomamason/image/upload/v1651072392/gallery/WhatsApp_Image_2021-12-05_at_10.36.14_3_oaecnb.jpg")
+  
   
   /* Create four equal columns that sits next to each other */
-  .column {
-    flex: 25%;
-    max-width: 25%;
-    padding: 0 4px;
-  }
+  .column 
+    flex: 25%
+    max-width: 25%
+    padding: 0 4px
   
-  .column img {
-    margin-top: 8px;
-    vertical-align: middle;
-    width: 100%;
-  }
+  
+  .column img 
+    margin-top: 8px
+    vertical-align: middle
+    width: 100%
+  
   
   /* Responsive layout - makes a two column-layout instead of four columns */
-  @media screen and (max-width: 450px) {
-    .column {
-      flex: 25%;
-      max-width: 25%;
-    }
-  }
+  @media screen and (max-width: 450px) 
+    .column 
+      flex: 25%
+      max-width: 25%
+    
+  
   
   /* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-  @media screen and (max-width: 400px) {
-    .column {
-      flex: 100%;
-      max-width: 100%;
-    }
-  }
+  @media screen and (max-width: 400px) 
+    .column 
+      flex: 100%
+      max-width: 100%
+    
+  
