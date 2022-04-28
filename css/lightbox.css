@@ -5,8 +5,6 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 0 4px;
-  opacity: 0.35;
-  filter: sepia(100%);
 }
 
 #connorwrapper {
@@ -21,7 +19,7 @@
   background-size: contain;
   background-position: center center;
   background-attachment: fixed;
-  filter: sepia(100%);
+  filter: sepia(50%);
 }
 
 /* Create four equal columns that sits next to each other */
@@ -39,6 +37,11 @@
   width: 100%;
   border: 3px;
   border-color: black;
+  opacity: 0.35;
+}
+
+img:hover {
+  opacity: 1;
 }
 
 /* Responsive layout - makes a two column-layout instead of four columns */
