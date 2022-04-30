@@ -8,7 +8,7 @@
 }
 
 #connorwrapper {
-  background-image: url('https://res.cloudinary.com/thomamason/image/upload/v1651072387/gallery/WhatsApp_Image_2021-12-05_at_10.42.24_1_qhzzkx.jpg');
+  background-image: url('https://res.cloudinary.com/thomamason/image/upload/v1651072387/gallery/WhatsApp_Image_2021-12-05_at_10.42.24_1_qhzzkx.webp');
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -29,6 +29,13 @@
           flex: 25%;
   max-width: 25%;
   padding: 0 4px;
+}
+
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 30%;
+    max-width: 33.4%;
+  }
 }
 
 .column img {
@@ -69,4 +76,3 @@ img:hover {
     max-width: 100%;
   }
 }  */
-/*# sourceMappingURL=lightbox.css.map */
