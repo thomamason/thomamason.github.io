@@ -39,6 +39,15 @@
   }
 }
 
+@media screen and (max-width: 425px) {
+  .row {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    max-width: 100%;
+  }
+}
+
 .row:last-child {
   max-width: 100%;
   -webkit-box-orient: horizontal;

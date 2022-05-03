@@ -37,6 +37,13 @@
       max-width: 33.4%;
     }
   }
+
+  @media screen and (max-width: 425px) {
+    .row {
+      flex: 100%;
+      max-width: 100%;
+    }
+  }
   
   .row:last-child {
     max-width: 100%;
