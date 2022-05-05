@@ -2,6 +2,15 @@ h1 {
  text-align: center;
 }
 
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}
+
 body {
   background-color: blanchedalmond;
 }
@@ -12,6 +21,14 @@ body {
     flex-direction: column;
   }
   
+#katamari_ball {
+  animation: rotation 2s infinite linear;
+}
+
+#katamari_prince {
+  position: absolute;
+  left: 180px;
+}
   .letter-box {
     border: 2px solid gray;
     border-radius: 3px;
