@@ -131,7 +131,7 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("Great Job you are so smart and I love you! Game over!")
+        toastr.success("Great Job! You are so smart and I love you! Game over!")
         guessesRemaining = 0
         return
     } else {
@@ -140,7 +140,7 @@ function checkGuess () {
         nextLetter = 0;
 
         if (guessesRemaining === 0) {
-            toastr.error("You fucked! Game over!")
+            toastr.error("You fucked it! Game over!")
             toastr.info(`The right word was: "${rightGuessString}"`)
         }
     }
