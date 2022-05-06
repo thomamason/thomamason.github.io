@@ -30,6 +30,7 @@ body {
 #katamari_prince {
   position: absolute;
   left: 180px;
+  z-index: 2;
 }
   .letter-box {
     border: 2px solid gray;
