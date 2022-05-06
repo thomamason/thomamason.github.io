@@ -67,6 +67,13 @@ h1 {
   }
 }
 
+.sliding-background {
+  background-image: url(".marnl/kata.jpg") repeat-x;
+  height: 664px;
+  width: 5076px;
+  animation: slide 60s linear infinite;
+}
+
 #outerwrapper {
   background-color: #1d1d1d;
   display: -webkit-box;
@@ -119,6 +126,7 @@ h1 {
           animation: rotation 2s infinite linear;
   width: 200px;
   height: 200px;
+  margin-right: -43px;
 }
 
 #katamari_prince {
