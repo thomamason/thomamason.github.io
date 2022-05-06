@@ -157,3 +157,9 @@ h1 {
     height: 50px;
     min-width: 36px;
   }
+/* 
+  @media only screen and (max-device-width: 480px) {
+    #outerwrapper {
+      width: 400px;
+    }
+  } */
