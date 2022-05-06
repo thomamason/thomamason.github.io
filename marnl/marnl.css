@@ -11,6 +11,7 @@ body {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
+  overflow-y: scroll
   -ms-overflow-style: hidden;
   /* IE and Edge */
   scrollbar-width: none;
