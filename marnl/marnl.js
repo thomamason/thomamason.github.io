@@ -131,7 +131,7 @@ function checkGuess () {
     }
 
     if (guessString === rightGuessString) {
-        toastr.success("Great Job! You are so smart and I love you! Game over!")
+        toastr.success("Great Job! You are so smart and I love you!")
         guessesRemaining = 0
         return
     } else {
