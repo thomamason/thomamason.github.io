@@ -21,14 +21,19 @@ h1 {
   }
 }
 
-body {
-  background-color: #2c2c2e;
+#outerwrapper {
+  background-color: #1d1d1d;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
-  align-items: center;
+  overflow: hidden;
 }
 
-.bg-container {
+ .bg-container { 
   overflow: hidden;
   position: fixed;
 }
@@ -38,7 +43,7 @@ body {
   height: 664px;
   width: 5076px;
   animation: slide 60s linear infinite;
-}
+} 
 
 #game-board {
     display: flex;
@@ -47,20 +52,17 @@ body {
   }
   
 #katamari {
-  max-width: 400px;
+    display: flex;
+    justify-content: center;
 }
 
 #katamari_ball {
-  position: absolute;
-  left: 111px;
   animation: rotation 2s infinite linear;
   width: 200px;
   height: 200px;
 }
 
 #katamari_prince {
-  position: absolute;
-  left: 199px;
   z-index: 2;
 }
   .letter-box {
