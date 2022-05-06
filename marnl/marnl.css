@@ -1,113 +1,171 @@
 h1 {
- text-align: center;
-}
-
-
-@keyframes rotation {
-  from {
-    transform: rotate(359deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1256px, 0, 0); /* The image width */
-  }
-}
-
-#outerwrapper {
-  background-color: #1d1d1d;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  overflow: hidden;
-}
-
- .bg-container { 
-  overflow: hidden;
-  position: fixed;
-}
-
-.bg {
-  content: url("marnl/kata.jpg") repeat-x;
-  height: 664px;
-  width: 5076px;
-  animation: slide 60s linear infinite;
-} 
-
-#game-board {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
-  
-#katamari {
-    display: flex;
-    justify-content: center;
-}
-
-#katamari_ball {
-  animation: rotation 2s infinite linear;
-  width: 200px;
-  height: 200px;
-}
-
-#katamari_prince {
-  z-index: 2;
-}
-  .letter-box {
-    border: 2px solid gray;
-    border-radius: 3px;
-    margin: 2px;
-    font-size: 2.5rem;
-    font-weight: 700;
-    height: 3rem;
-    width: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-transform: uppercase;
-  }
-  
-  .filled-box {
-    border: 2px solid black;
-  }
-  
-  .letter-row {
-    display: flex;
-  }
-
-  #keyboard-cont {
-    margin: 1rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  #keyboard-cont div {
-    display: flex;
-  }
-  
-  .second-row {
-    margin: 0.5rem 0;
-  }
-  
-  .keyboard-button {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 0.5rem;
-    margin: 0 2px;
-    cursor: pointer;
-    text-transform: uppercase;
-    height: 50px;
-  }
+  text-align: center;
+ }
+ 
+ 
+ @-webkit-keyframes rotation {
+   from {
+     -webkit-transform: rotate(359deg);
+             transform: rotate(359deg);
+   }
+   to {
+     -webkit-transform: rotate(0deg);
+             transform: rotate(0deg);
+   }
+ }
+ 
+ 
+ @keyframes rotation {
+   from {
+     -webkit-transform: rotate(359deg);
+             transform: rotate(359deg);
+   }
+   to {
+     -webkit-transform: rotate(0deg);
+             transform: rotate(0deg);
+   }
+ }
+ 
+ @-webkit-keyframes slide {
+   0% {
+     -webkit-transform: translate3d(0, 0, 0);
+             transform: translate3d(0, 0, 0);
+   }
+   100% {
+     -webkit-transform: translate3d(-1256px, 0, 0);
+             transform: translate3d(-1256px, 0, 0); /* The image width */
+   }
+ }
+ 
+ @keyframes slide {
+   0% {
+     -webkit-transform: translate3d(0, 0, 0);
+             transform: translate3d(0, 0, 0);
+   }
+   100% {
+     -webkit-transform: translate3d(-1256px, 0, 0);
+             transform: translate3d(-1256px, 0, 0); /* The image width */
+   }
+ }
+ 
+ #outerwrapper {
+   background-color: #1d1d1d;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -ms-flex-direction: column;
+   flex-direction: column;
+   overflow: hidden;
+ }
+ 
+  .bg-container { 
+   overflow: hidden;
+   position: fixed;
+ }
+ 
+ .bg {
+   content: url("marnl/kata.jpg") repeat-x;
+   height: 664px;
+   width: 5076px;
+   -webkit-animation: slide 60s linear infinite;
+           animation: slide 60s linear infinite;
+ } 
+ 
+ #game-board {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+             flex-direction: column;
+   }
+   
+ #katamari {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             justify-content: center;
+ }
+ 
+ #katamari_ball {
+   -webkit-animation: rotation 2s infinite linear;
+           animation: rotation 2s infinite linear;
+   width: 200px;
+   height: 200px;
+ }
+ 
+ #katamari_prince {
+   z-index: 2;
+ }
+   .letter-box {
+     border: 2px solid gray;
+     border-radius: 3px;
+     margin: 2px;
+     font-size: 2.5rem;
+     font-weight: 700;
+     height: 3rem;
+     width: 3rem;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-pack: center;
+         -ms-flex-pack: center;
+             justify-content: center;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+     text-transform: uppercase;
+   }
+   
+   .filled-box {
+     border: 2px solid black;
+   }
+   
+   .letter-row {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+   }
+ 
+   #keyboard-cont {
+     margin: 1rem 0;
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+         -ms-flex-direction: column;
+             flex-direction: column;
+     -webkit-box-align: center;
+         -ms-flex-align: center;
+             align-items: center;
+   }
+   
+   #keyboard-cont div {
+     display: -webkit-box;
+     display: -ms-flexbox;
+     display: flex;
+   }
+   
+   .second-row {
+     margin: 0.5rem 0;
+   }
+   
+   .keyboard-button {
+     font-size: 1rem;
+     font-weight: 700;
+     padding: 0.5rem;
+     margin: 0 2px;
+     cursor: pointer;
+     text-transform: uppercase;
+     height: 50px;
+     min-width: 36px;
+   }
