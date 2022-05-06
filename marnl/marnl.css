@@ -52,7 +52,7 @@ body {
 
 #katamari_ball {
   position: absolute;
-  left: 251px;
+  left: 151px;
   animation: rotation 2s infinite linear;
   width: 200px;
   height: 200px;
@@ -60,7 +60,7 @@ body {
 
 #katamari_prince {
   position: absolute;
-  left: 399px;
+  left: 199px;
   z-index: 2;
 }
   .letter-box {
