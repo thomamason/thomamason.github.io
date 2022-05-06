@@ -4,10 +4,10 @@ h1 {
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
+    -webkit-transform-origin: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+    -webkit-transform-origin: rotate(359deg);
   }
 }
 
@@ -23,6 +23,8 @@ body {
   
 #katamari_ball {
   animation: rotation 2s infinite linear;
+  width: 200px;
+  height: 200px;
 }
 
 #katamari_prince {
