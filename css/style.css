@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 }
 
 .outerwrapper {
-  background-color: #2d2d2d;
+  background-color: #1d1d1d;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

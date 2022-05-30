@@ -71,7 +71,22 @@
   
   .art {
     --animate-duration: 4s;
-  
+    object-fit: contain;
+    
+    &__container {
+      margin-left: unset !important;
+      margin-right: unset !important;
+      justify-content: center;
+    }
+    
+    &__textbox {
+      width: 100%;
+      padding: 10px;
+      background-color: white;
+      border: 5px solid red;
+      border-radius: 10px;
+      content: "";
+    }
   }
   
   .art:nth-of-type(3n + 1) {
