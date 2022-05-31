@@ -78,8 +78,15 @@ img:hover {
 
 .art {
   --animate-duration: 4s;
-  -o-object-fit: contain;
-     object-fit: contain;
+  background-color: white;
+  border: 5px solid red;
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.art img {
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .art__container {
@@ -90,13 +97,29 @@ img:hover {
           justify-content: center;
 }
 
-.art__textbox {
-  width: 100%;
-  padding: 10px;
-  background-color: white;
+.art__textbox-wrapper {
   border: 5px solid red;
   border-radius: 10px;
+  background-color: white;
+}
+
+.art__textbox-container {
+  width: 100%;
+  padding: 10px;
   content: "";
+}
+
+.art__textbox-container:before {
+  opacity: 50%;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-image: url("https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072392/gallery/WhatsApp_Image_2021-12-05_at_10.55.16_bx82vu.webp");
+  background-size: 100% 100%;
+}
+
+.art__textbox-content {
+  color: green;
 }
 
 .art:nth-of-type(3n + 1) {
