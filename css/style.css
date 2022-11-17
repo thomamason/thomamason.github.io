@@ -1,12 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap");
 html {
   font-size: 100%;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *::before, *::after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -15,31 +14,23 @@ body {
   margin: 0px;
   padding: 0px;
   background-color: #1d1d1d;
-  -ms-flex-line-pack: center;
   align-content: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
   justify-content: center;
   height: 100vh;
-  overflow: scroll;
+  overflow: hidden;
   -ms-overflow-style: none;
   /* IE and Edge */
   scrollbar-width: none;
   /* Firefox */
 }
-
 body::-webkit-scrollbar {
   display: none;
 }
 
 .outerwrapper {
   background-color: #1d1d1d;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
+  justify-content: center;
   flex-direction: column;
 }
 
@@ -52,18 +43,11 @@ body::-webkit-scrollbar {
   min-height: 100%;
   width: auto;
   height: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   z-index: -10;
 }
 
-#buffer {
-  padding-top: 60px;
-}
-
 #logo {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   max-width: 100%;
 }
@@ -79,4 +63,43 @@ body::-webkit-scrollbar {
   height: 100%;
   overflow: auto;
 }
-/*# sourceMappingURL=style.css.map */
+
+header {
+  margin: 30px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  height: 20vmin;
+  min-width: 350px;
+  max-width: 600px;
+  max-height: 100px;
+  font-family: "Sono", sans-serif;
+  font-weight: 600 !important;
+  background-color: azure;
+  opacity: 0.6;
+}
+.button i {
+  transform: scale(3);
+}
+.button a {
+  text-decoration: none;
+  color: rgb(25, 25, 25);
+}
+
+footer {
+  justify-self: flex-end;
+}/*# sourceMappingURL=style.css.map */
