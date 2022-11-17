@@ -2,3 +2,4 @@
 .vs/thomamason.github.io/config/applicationhost.config
 .vs/thomamason.github.io/v16/.suo
 .vs/VSWorkspaceState.json
+node_modules/@fortawesome/fontawesome-free/less/_animated.less
