@@ -27,11 +27,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.outerwrapper {
+#outerwrapper {
   background-color: #1d1d1d;
   display: flex;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
 }
 
 .fullscreen-video {
