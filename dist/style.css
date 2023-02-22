@@ -41,37 +41,11 @@ body::-webkit-scrollbar {
   flex-direction: column;
 }
 
-.fullscreen-video {
-  position: fixed;
-  overflow: hidden;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  z-index: -10;
-}
-
 #logo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   max-width: 100%;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
 }
 
 header {
@@ -84,34 +58,17 @@ main {
   margin: 10px;
 }
 
-.button {
-  color: #191919;
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  height: 20vmin;
-  min-width: 350px;
-  max-width: 600px;
-  max-height: 100px;
-  font-family: "Sono", sans-serif;
-  font-weight: 600 !important;
-  background-color: azure;
-  opacity: 0.6;
-}
-.button i {
-  transform: scale(3);
-}
-.button a {
-  text-decoration: none;
-  color: #191919;
-}
-
 footer {
   justify-self: flex-end;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
+}
+
+.icon {
+  padding: 0 8px 0 8px;
 }
