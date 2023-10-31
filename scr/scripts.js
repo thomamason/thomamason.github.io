@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const dropdownIcon = document.getElementById("dropdown-icon");
+    const dropdownIcon = document.getElementById("bc-banner");
     const mediaDropdown = document.getElementById("media-dropdown");
 
     dropdownIcon.addEventListener("click", function () {
