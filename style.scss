@@ -119,3 +119,24 @@ footer {
     }
   }
 }
+
+#media-dropdown {
+  display: none;
+}
+
+#bc-banner {
+  position: relative;
+}
+
+#dropdown-icon {
+  cursor: pointer;
+}
+
+/* Style the dropdown content */
+.dropdown-content {
+  position: absolute;
+  background-color: inherit;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  z-index: 1;
+}
