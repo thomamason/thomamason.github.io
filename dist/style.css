@@ -26,10 +26,19 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.el {
+  background-color: rgba(169, 169, 169, 0.4);
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 8px;
+}
+
 #outerwrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
 #logo {
@@ -38,11 +47,14 @@ body::-webkit-scrollbar {
 }
 
 header {
-  margin: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 header #portrait {
   border-radius: 50%;
+  align-self: center;
   height: 94px;
   width: 94px;
 }
@@ -60,7 +72,7 @@ footer {
   justify-self: flex-end;
 }
 
-.icons {
+#icons {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
@@ -68,19 +80,15 @@ footer {
   justify-content: space-around;
   width: 80vw;
   height: 45px;
-  background-color: rgba(169, 169, 169, 0.7);
-  border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
-.icons .icon {
+#icons .icon {
   color: #1d1d1d;
   font-size: 30px;
   padding: 0 8px;
   display: flex;
   text-decoration: none;
 }
-.icons .icon .fa-brands {
+#icons .icon .fa-brands {
   position: relative;
 }
 
@@ -106,8 +114,7 @@ footer {
 }
 .banner-main {
   display: flex;
-  justify-content: space-between;
-  align-content: center;
+  align-items: center;
 }
 
 #media-dropdown {

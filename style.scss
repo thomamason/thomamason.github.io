@@ -32,10 +32,19 @@ body {
   }
 }
 
+.el {
+  background-color: rgba(169, 169, 169, 0.4);
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 8px;
+}
+
 #outerwrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 10px;
 }
 
 #logo {
@@ -44,11 +53,14 @@ body {
 }
 
 header {
-  margin: 30px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
   #portrait {
     border-radius: 50%;
+    align-self: center;
     height: 94px;
     width: 94px;
   }
@@ -68,7 +80,7 @@ footer {
   justify-self: flex-end;
 }
 
-.icons {
+#icons {
   display: flex;
   flex-wrap: wrap;
   align-self: center;
@@ -76,10 +88,6 @@ footer {
   justify-content: space-around;
   width: 80vw;
   height: 45px;
-  background-color: rgba(169, 169, 169, 0.7);
-  border-radius: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 
   .icon {
     color: #1d1d1d;
@@ -120,8 +128,7 @@ footer {
 
   &-main {
     display: flex;
-    justify-content: space-between;
-    align-content: center;
+    align-items: center;
   }
 }
 
