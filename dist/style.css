@@ -3,6 +3,11 @@ html {
   font-size: 100%;
   box-sizing: border-box;
 }
+@media (max-width: 768px) {
+  html {
+    font-size: 90%;
+  }
+}
 
 *,
 *::before,
@@ -14,6 +19,11 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@media (max-width: 768px) {
+  #outerwrapper {
+    padding: 10px;
+  }
 }
 
 #loadingScreen {
@@ -53,6 +63,11 @@ body {
 body::-webkit-scrollbar {
   display: none;
 }
+@media (max-width: 768px) {
+  body {
+    text-align: center;
+  }
+}
 
 .el {
   background-color: rgba(169, 169, 169, 0.4);
@@ -60,6 +75,11 @@ body::-webkit-scrollbar {
   padding-top: 8px;
   padding-bottom: 8px;
   margin: 8px;
+}
+@media (max-width: 768px) {
+  .el {
+    width: 90%;
+  }
 }
 
 #logo {
@@ -88,9 +108,19 @@ main {
   flex-direction: column;
   margin: 10px;
 }
+@media (max-width: 768px) {
+  main {
+    margin: 10px 0;
+  }
+}
 
 footer {
   justify-self: flex-end;
+}
+@media (max-width: 768px) {
+  footer {
+    text-align: center;
+  }
 }
 
 #icons {
@@ -112,13 +142,18 @@ footer {
 #icons .icon .fa-brands {
   position: relative;
 }
+@media (max-width: 768px) {
+  #icons {
+    width: 100%;
+  }
+}
 
 .banner {
-  margin-top: 10px;
+  margin: 8px;
   background-color: rgba(169, 169, 169, 0.7);
   border-radius: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 8px;
   justify-content: space-between;
 }
@@ -126,6 +161,9 @@ footer {
   margin: 5px;
   text-align: center;
   font-size: 12px;
+}
+.banner .bannerimg {
+  display: flex;
 }
 .banner .bannerimg img {
   border-radius: 10px;
@@ -136,6 +174,7 @@ footer {
 .banner-main {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 #media-dropdown {
@@ -145,15 +184,11 @@ footer {
 #bc-banner {
   position: relative;
 }
-
-#dropdown-icon {
+#bc-banner #dropdown-icon {
   cursor: pointer;
 }
-
-.dropdown-content {
-  position: absolute;
+#bc-banner .dropdown-content {
+  margin-top: 0.8vh;
   background-color: inherit;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  padding: 10px;
   z-index: 1;
 }

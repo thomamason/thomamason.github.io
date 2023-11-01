@@ -2,12 +2,12 @@
 
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize your variables
-  var dropdownIcon = document.getElementById("bc-banner");
+  var bcBanner = document.getElementById("bc-banner");
   var mediaDropdown = document.getElementById("media-dropdown");
   var video = document.getElementById('jaiVideo');
   var loadingScreen = document.getElementById('loadingScreen');
   var lazyloadThrottleTimeout;
-  dropdownIcon.addEventListener("click", function () {
+  bcBanner.addEventListener("click", function () {
     if (mediaDropdown.style.display === "flex") {
       mediaDropdown.style.display = "none";
     } else {
@@ -26,11 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
       video.play();
     } else {
       video.style.display = 'block';
-      loadingScreen.style.display = 'none'; // Set opacity to 1 to trigger the fade-in effect
-
+      loadingScreen.style.display = 'none';
       video.style.opacity = 1;
       video.addEventListener('canplaythrough', function () {
-        // Video has loaded, hide the loading screen and show the video
         loadingScreen.style.display = 'none';
         video.play();
       });
@@ -43,10 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     cl.responsive();
   }
-
-  function lazyLoadImages() {} // Your lazy load image code here
-  // Attach event listeners
-
 
   document.body.addEventListener("touchstart", playVideo);
   initCloudinary();
