@@ -49,3 +49,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.addEventListener("touchstart", playVideo);
     initCloudinary();
 });
+
