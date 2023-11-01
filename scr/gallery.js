@@ -27,3 +27,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     loadLinks();
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const images = document.querySelectorAll("img.lazy");
+
+    function lazyLoad() {
+        images.forEach(function(image) {
+            if (image.getBoundingClientRect().top < window.innerHeight && image.dataset.src) {
+                image.src = image.dataset.src;
+                image.dataset.src = ""; // Clear the data-src attribute to prevent double-loading
+                image.classList.remove("lazy");
+            }
+        });
+    }
+
+    // Attach the lazyLoad function to the scroll event and call it once on page load
+    window.addEventListener("scroll", lazyLoad);
+    window.addEventListener("load", lazyLoad);
+});

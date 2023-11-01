@@ -9,19 +9,24 @@ main {
 margin-top: 18vh;
 }
 
-.links-container {
+#links-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; // Distribute images evenly between rows
+  flex-wrap: wrap; /* Allow items to wrap to the next row */
+  justify-content: space-between; /* Distribute items evenly */
+  max-width: 1000px; /* Adjust this as needed */
+  margin: 0 auto; /* Center the container horizontally */
 }
 
-.image-thumbnail {
-  max-width: calc(50% - 10px); // 2 images per row with some spacing
-  margin-bottom: 10px; // Add spacing between rows
+/* Style the images inside the .art divs */
+#links-container .animate__animated art .animate__zoomIn .art img {
+  max-width: calc(50% - 10px); /* 2 images in a row with a small gap */
+  margin: 5px; /* Adjust the gap between images */
+  box-sizing: border-box; /* Include padding and border in element's total width */
 }
 
-@media (max-width: 768px) {
-  .image-thumbnail {
-    max-width: 100%; // 1 image per row on smaller screens
+/* For mobile devices, display 1 image in a row */
+@media (max-width: 767px) {
+  #links-container .art img {
+    max-width: 100%; /* 1 image in a row, full width */
   }
 }
