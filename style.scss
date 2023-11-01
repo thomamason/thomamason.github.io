@@ -1,48 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap');
 
-// Mixin for Sono font
 @mixin sono {
   font-family: 'Sono', sans-serif;
   font-weight: 600 !important;
 }
 
-// Base HTML styles
 html {
   font-size: 100%;
   box-sizing: border-box;
-}
 
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-// Body styles
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.3;
-  margin: 0;
-  padding: 0;
-  background-color: #1d1d1d;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  overflow: hidden;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
-  &::-webkit-scrollbar {
-    display: none;
+  @media (max-width: 768px) {
+    font-size: 90%; // Adjust the font size for smaller screens
   }
 }
 
-// Outer wrapper styles
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
 #outerwrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 768px) {
+    padding: 10px; // Add spacing for smaller screens
+  }
 }
 
-// Loading screen styles
 #loadingScreen {
   color: black;
   width: 100%;
@@ -52,7 +39,6 @@ body {
   left: 0;
 }
 
-// Fullscreen video styles
 .fullscreen-video {
   position: fixed;
   overflow: hidden;
@@ -66,70 +52,75 @@ body {
   z-index: -10;
 }
 
-// Logo styles
+body {
+  font-family: 'Sono', sans-serif;
+  line-height: 1.3;
+  margin: 0;
+  padding: 0;
+  background-color: #dbdbdb;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    text-align: center; // Center-align content for smaller screens
+  }
+}
+
+.el {
+  background-color: rgba(169, 169, 169, 0.4);
+  border-radius: 10px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin: 8px;
+
+  @media (max-width: 768px) {
+    width: 90%; // Adjust the width for smaller screens
+  }
+}
+
 #logo {
   display: flex;
   max-width: 100%;
 }
 
-// Modal styles
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-}
-
-// Header styles
 header {
-  margin: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  #portrait {
+    border-radius: 50%;
+    align-self: center;
+    height: 94px;
+    width: 94px;
+  }
+
+  h3, p {
+    margin: 0;
+  }
 }
 
-// Main content styles
 main {
   display: flex;
   flex-direction: column;
   margin: 10px;
-}
 
-// Button styles
-.button {
-  color: rgb(25, 25, 25);
-  text-decoration: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 5px;
-  margin: 5px;
-  border: 1px solid transparent;
-  border-radius: 10px;
-  height: 20vmin;
-  min-width: 350px;
-  max-width: 600px;
-  max-height: 100px;
-  @include sono;
-  background-color: azure;
-  opacity: 0.6;
-  
-  i {
-    transform: scale(3);
-  }
-  
-  a {
-    text-decoration: none;
-    color: rgb(25, 25, 25);
+  @media (max-width: 768px) {
+    margin: 10px 0; // Remove horizontal margin for smaller screens
   }
 }
 
-// Footer styles
 footer {
   justify-self: flex-end;
+
+  @media (max-width: 768px) {
+    text-align: center; // Center-align for smaller screens
+  }
 }
 
 #icons {
