@@ -3,21 +3,24 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Initialize your variables
   var bcBanner = document.getElementById("bc-banner");
-  var mediaDropdown = document.getElementById("media-dropdown");
+  var ytBanner = document.getElementById("yt-banner");
+  var bcmediaDropdown = document.getElementById("bcmedia-dropdown");
+  var ytmediaDropdown = document.getElementById("ytmedia-dropdown");
   var video = document.getElementById('jaiVideo');
   var loadingScreen = document.getElementById('loadingScreen');
   var lazyloadThrottleTimeout;
   bcBanner.addEventListener("click", function () {
-    if (mediaDropdown.style.display === "flex") {
-      mediaDropdown.style.display = "none";
+    if (bcmediaDropdown.style.display === "flex") {
+      bcmediaDropdown.style.display = "none";
     } else {
-      mediaDropdown.style.display = "flex";
+      bcmediaDropdown.style.display = "flex";
     }
-  }); // Close the dropdown when clicking outside of it
-
-  window.addEventListener("click", function (event) {
-    if (event.target != dropdownIcon) {
-      mediaDropdown.style.display = "none";
+  });
+  ytBanner.addEventListener("click", function () {
+    if (ytmediaDropdown.style.display === "flex") {
+      ytmediaDropdown.style.display = "none";
+    } else {
+      ytmediaDropdown.style.display = "flex";
     }
   });
 

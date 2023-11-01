@@ -3,23 +3,26 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Initialize your variables
     const bcBanner = document.getElementById("bc-banner");
-    const mediaDropdown = document.getElementById("media-dropdown");
+    const ytBanner = document.getElementById("yt-banner");
+    const bcmediaDropdown = document.getElementById("bcmedia-dropdown");
+    const ytmediaDropdown = document.getElementById("ytmedia-dropdown");
     const video = document.getElementById('jaiVideo');
     const loadingScreen = document.getElementById('loadingScreen');
     let lazyloadThrottleTimeout;
 
     bcBanner.addEventListener("click", function () {
-        if (mediaDropdown.style.display === "flex") {
-            mediaDropdown.style.display = "none";
+        if (bcmediaDropdown.style.display === "flex") {
+            bcmediaDropdown.style.display = "none";
         } else {
-            mediaDropdown.style.display = "flex";
+            bcmediaDropdown.style.display = "flex";
         }
     });
 
-    // Close the dropdown when clicking outside of it
-    window.addEventListener("click", function (event) {
-        if (event.target != dropdownIcon) {
-            mediaDropdown.style.display = "none";
+    ytBanner.addEventListener("click", function () {
+        if (ytmediaDropdown.style.display === "flex") {
+            ytmediaDropdown.style.display = "none";
+        } else {
+            ytmediaDropdown.style.display = "flex";
         }
     });
 

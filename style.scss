@@ -61,7 +61,6 @@ body {
   align-content: center;
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
@@ -90,10 +89,9 @@ body {
 }
 
 header {
-  text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
   
   #portrait {
     border-radius: 50%;
@@ -183,20 +181,22 @@ footer {
   }
 }
 
-#media-dropdown {
+#bcmedia-dropdown {
   display: none;
+  flex-direction: column;
 }
 
-#bc-banner {
-  position: relative;
-
-  #dropdown-icon {
-    cursor: pointer;
-  }
+#ytmedia-dropdown {
+  display: none;
+  flex-direction: column;
+}
 
   .dropdown-content {
     margin-top: 0.8vh;
-    background-color: inherit;
     z-index: 1;
+    iframe {
+      margin-top: 8px;
+      width: auto;
+    }
   }
-}
+
