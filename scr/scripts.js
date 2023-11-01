@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const mediaDropdown = document.getElementById("media-dropdown");
 
     dropdownIcon.addEventListener("click", function () {
-        if (mediaDropdown.style.display === "block") {
+        if (mediaDropdown.style.display === "flex") {
             mediaDropdown.style.display = "none";
         } else {
-            mediaDropdown.style.display = "block";
+            mediaDropdown.style.display = "flex";
         }
     });
 
