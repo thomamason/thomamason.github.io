@@ -131,3 +131,80 @@ main {
 footer {
   justify-self: flex-end;
 }
+
+#icons {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  align-content: center;
+  justify-content: space-around;
+  width: 80vw;
+  height: 45px;
+
+  .icon {
+    color: #1d1d1d;
+    font-size: 30px;
+    padding: 0 8px;
+    display: flex;
+    text-decoration: none;
+
+    .fa-brands {
+      position: relative;
+    }
+  }
+
+  @media (max-width: 768px) {
+    width: 100%; // Full width for smaller screens
+  }
+}
+
+.banner {
+  margin: 8px;
+  background-color: rgba(169, 169, 169, 0.7);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  justify-content: space-between;
+
+  p {
+    margin: 5px;
+    text-align: center;
+    font-size: 12px;
+  }
+
+  .bannerimg {
+    display: flex;
+    img {
+      border-radius: 10px;
+      width: 48px;
+      height: 48px;
+      object-fit: cover;
+    }
+  }
+
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+#bcmedia-dropdown {
+  display: none;
+  flex-direction: column;
+}
+
+#ytmedia-dropdown {
+  display: none;
+  flex-direction: column;
+}
+
+  .dropdown-content {
+    margin-top: 0.8vh;
+    z-index: 1;
+    iframe {
+      margin-top: 8px;
+      width: auto;
+    }
+  }
