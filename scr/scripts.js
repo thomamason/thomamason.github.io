@@ -50,3 +50,11 @@ document.addEventListener("DOMContentLoaded", function () {
     initCloudinary();
 });
 
+function openModal() {
+    document.getElementById("modal").setAttribute('style', 'display:block;');
+  }
+  
+
+  function closeModal() {
+    document.getElementsByClassName("modal").style.display = "none";
+  }

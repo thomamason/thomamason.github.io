@@ -5,28 +5,39 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Home website of Thomas G. Featherstone.">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/gallery.css">
+    <link rel="stylesheet" href="dist/style.css">
+    <link rel="stylesheet" href="dist/gallery.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <script src="scr/jaiyu.js"></script>
-    <!-- <script data-src="scr/lightbox.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.3.0/cloudinary-core-shrinkwrap.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://kit.fontawesome.com/4e36f292c2.js" crossorigin="anonymous"></script>
+    <script src="scr/scripts.js"></script>
+    <script src="scr/gallery.js"></script>
 </head>
 
 <body>   
-    <div id="outerwrapper" class="container-fluid">
+    <div id="outerwrapper" class="container-fluid"></div>
         
         <div class="bg-overlay"></div>
         <video class="fullscreen-video" id="jaiVideo" autoplay="autoplay" muted loop><source src="src/Sequence128p.mp4" type="video/mp4"></video>
-           
+        
+        <header id="galleryheader">
             <div id="buffer" class="container-fluid">
                 <img src="src/thomamasonlogoedit.png" id="logo">
             </div>
-            
-                <div class="row art__container">
+            <div id="icons" class="el">
+                <a class="icon" href="index.html" target="_blank"><i class="fa-solid fa-house"></i></a>
+                <a class="icon" href="https://www.github.com/thomamason" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a class="icon" href="https://www.codepen.io/thomamason" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+                <a class="icon" href="https://www.instagram.com/thomamasonnn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a class="icon" href="https://milkproblems.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i></a>
+                <a class="icon" href="https://soundcloud.com/milkproblems" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+            </div>
+        </header>        
+        <main>
+                <!-- <div class="row art__container">
                         <div class="art__textbox-wrapper">
                             <div class="art__textbox-container">
                                 <div class="art__textbox-content">
@@ -168,13 +179,13 @@
                         <div class="animate__animated art animate__zoomIn"><img data-src="https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072384/gallery/WhatsApp_Image_2021-12-05_at_10.36.12_2_ksenzw.webp" class="lazy"></div>
                         <div class="animate__animated art animate__zoomIn"><img data-src="https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072383/gallery/WhatsApp_Image_2021-12-05_at_10.41.40_xje5m2.webp" class="lazy"></div>
                         <div class="animate__animated art animate__zoomIn"><img data-src="https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072381/gallery/WhatsApp_Image_2021-12-05_at_10.41.39_1_xwkgz7.webp" class="lazy"></div>
-                        <div class="animate__animated art animate__zoomIn"><img data-src="https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072381/gallery/WhatsApp_Image_2021-12-05_at_10.41.38_xczpwp.webp" class="lazy"></div>
-                    
-                </div>
-                                
+                        <div class="animate__animated art animate__zoomIn"><img data-src="https://res.cloudinary.com/thomamason/image/upload/c_fit,w_300,q_auto,f_auto/v1651072381/gallery/WhatsApp_Image_2021-12-05_at_10.41.38_xczpwp.webp" class="lazy"></div>                    
+                </div> -->
+            <div id="links-container">   
                 
+            </div>
+        </main>
             
-    </div>    
 </body>
 
 </html> 

@@ -1,0 +1,27 @@
+#galleryheader {
+  position: fixed;
+  top: 2vh;
+  width: 100%;
+  z-index: 100;
+}
+
+main {
+  margin-top: 18vh;
+}
+
+.links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.image-thumbnail {
+  max-width: calc(50% - 10px);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .image-thumbnail {
+    max-width: 100%;
+  }
+}
