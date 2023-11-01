@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Initialize your variables
     const bcBanner = document.getElementById("bc-banner");
     const ytBanner = document.getElementById("yt-banner");
     const bcmediaDropdown = document.getElementById("bcmedia-dropdown");
@@ -10,21 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const loadingScreen = document.getElementById('loadingScreen');
     let lazyloadThrottleTimeout;
 
-    bcBanner.addEventListener("click", function () {
-        if (bcmediaDropdown.style.display === "flex") {
-            bcmediaDropdown.style.display = "none";
+    function toggleDropdown(dropdown, state) {
+        if (state === "flex") {
+            dropdown.style.display = "none";
         } else {
-            bcmediaDropdown.style.display = "flex";
+            dropdown.style.display = "flex";
         }
-    });
-
-    ytBanner.addEventListener("click", function () {
-        if (ytmediaDropdown.style.display === "flex") {
-            ytmediaDropdown.style.display = "none";
-        } else {
-            ytmediaDropdown.style.display = "flex";
-        }
-    });
+    }
 
     function playVideo() {
         if (!video.paused) {
@@ -46,8 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
         const cl = cloudinary.Cloudinary.new({ cloud_name: '<Cloud Name>' });
         cl.responsive();
     }
- 
+
+    bcBanner.addEventListener("click", function () {
+        toggleDropdown(bcmediaDropdown, bcmediaDropdown.style.display);
+    });
+
+    ytBanner.addEventListener("click", function () {
+        toggleDropdown(ytmediaDropdown, ytmediaDropdown.style.display);
+    });
+
     document.body.addEventListener("touchstart", playVideo);
     initCloudinary();
-    lazyLoadImages();
 });

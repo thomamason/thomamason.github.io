@@ -1,7 +1,6 @@
 'use strict';
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Initialize your variables
   var bcBanner = document.getElementById("bc-banner");
   var ytBanner = document.getElementById("yt-banner");
   var bcmediaDropdown = document.getElementById("bcmedia-dropdown");
@@ -9,20 +8,14 @@ document.addEventListener("DOMContentLoaded", function () {
   var video = document.getElementById('jaiVideo');
   var loadingScreen = document.getElementById('loadingScreen');
   var lazyloadThrottleTimeout;
-  bcBanner.addEventListener("click", function () {
-    if (bcmediaDropdown.style.display === "flex") {
-      bcmediaDropdown.style.display = "none";
+
+  function toggleDropdown(dropdown, state) {
+    if (state === "flex") {
+      dropdown.style.display = "none";
     } else {
-      bcmediaDropdown.style.display = "flex";
+      dropdown.style.display = "flex";
     }
-  });
-  ytBanner.addEventListener("click", function () {
-    if (ytmediaDropdown.style.display === "flex") {
-      ytmediaDropdown.style.display = "none";
-    } else {
-      ytmediaDropdown.style.display = "flex";
-    }
-  });
+  }
 
   function playVideo() {
     if (!video.paused) {
@@ -45,7 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
     cl.responsive();
   }
 
+  bcBanner.addEventListener("click", function () {
+    toggleDropdown(bcmediaDropdown, bcmediaDropdown.style.display);
+  });
+  ytBanner.addEventListener("click", function () {
+    toggleDropdown(ytmediaDropdown, ytmediaDropdown.style.display);
+  });
   document.body.addEventListener("touchstart", playVideo);
   initCloudinary();
-  lazyLoadImages();
 });
