@@ -84,6 +84,7 @@ body::-webkit-scrollbar {
 #logo {
   display: flex;
   max-width: 100%;
+  background: none;
 }
 
 header {
