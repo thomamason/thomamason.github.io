@@ -1,5 +1,3 @@
-<!-- Built this using https://www.freecodecamp.org/news/build-a-wordle-clone-in-javascript/ -->
-<!-- check this for rotating images https://flaviocopes.com/rotate-image/ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,85 +6,60 @@
     <meta name="robots" content="noindex">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Marnl - Like wordle, but it's for Marney.</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="marnl/dist/marnl.css"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="marnl/marnl.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
 </head>
 <body>
-<!-- 
-    <div class="sun">
-        <div class="ray_box">
-            <div class="ray ray1"></div>
-            <div class="ray ray2"></div>
-            <div class="ray ray3"></div>
-            <div class="ray ray4"></div>
-            <div class="ray ray5"></div>
-            <div class="ray ray6"></div>
-            <div class="ray ray7"></div>
-            <div class="ray ray8"></div>
-            <div class="ray ray9"></div>
-            <div class="ray ray10"></div>
+    <div id="outerwrapper">
+        <img src="marnl/marnl-title.png" style="max-width:400px; align-self: center; padding-top: 10px;"/>
+        <div id="game-board"></div>
+        <div id="keyboard-cont">
+            <div class="first-row">
+                <button class="keyboard-button">q</button>
+                <button class="keyboard-button">w</button>
+                <button class="keyboard-button">e</button>
+                <button class="keyboard-button">r</button>
+                <button class="keyboard-button">t</button>
+                <button class="keyboard-button">y</button>
+                <button class="keyboard-button">u</button>
+                <button class="keyboard-button">i</button>
+                <button class="keyboard-button">o</button>
+                <button class="keyboard-button">p</button>
+            </div>
+            <div class="second-row">
+                <button class="keyboard-button">a</button>
+                <button class="keyboard-button">s</button>
+                <button class="keyboard-button">d</button>
+                <button class="keyboard-button">f</button>
+                <button class="keyboard-button">g</button>
+                <button class="keyboard-button">h</button>
+                <button class="keyboard-button">j</button>
+                <button class="keyboard-button">k</button>
+                <button class="keyboard-button">l</button>
+            </div>
+            <div class="third-row">
+                <button class="keyboard-button">Del</button>
+                <button class="keyboard-button">z</button>
+                <button class="keyboard-button">x</button>
+                <button class="keyboard-button">c</button>
+                <button class="keyboard-button">v</button>
+                <button class="keyboard-button">b</button>
+                <button class="keyboard-button">n</button>
+                <button class="keyboard-button">m</button>
+                <button class="keyboard-button">Enter</button>
+            </div>
         </div>
-    </div> -->
-   
-    <div id="outerwrapper" >
-    
-        <!-- <div class="sliding-background"></div> -->
-        
-            <img src="marnl/marnl-title.png" style="max-width:400px;align-self: center;padding-top: 10px;"/>
-
-            <div id="game-board">
-
-            </div>
-            <div id="keyboard-cont">
-                <div class="first-row">
-                    <button class="keyboard-button">q</button>
-                    <button class="keyboard-button">w</button>
-                    <button class="keyboard-button">e</button>
-                    <button class="keyboard-button">r</button>
-                    <button class="keyboard-button">t</button>
-                    <button class="keyboard-button">y</button>
-                    <button class="keyboard-button">u</button>
-                    <button class="keyboard-button">i</button>
-                    <button class="keyboard-button">o</button>
-                    <button class="keyboard-button">p</button>
-                </div>
-                <div class="second-row">
-                    <button class="keyboard-button">a</button>
-                    <button class="keyboard-button">s</button>
-                    <button class="keyboard-button">d</button>
-                    <button class="keyboard-button">f</button>
-                    <button class="keyboard-button">g</button>
-                    <button class="keyboard-button">h</button>
-                    <button class="keyboard-button">j</button>
-                    <button class="keyboard-button">k</button>
-                    <button class="keyboard-button">l</button>
-                </div>
-                <div class="third-row">
-                    <button class="keyboard-button">Del</button>
-                    <button class="keyboard-button">z</button>
-                    <button class="keyboard-button">x</button>
-                    <button class="keyboard-button">c</button>
-                    <button class="keyboard-button">v</button>
-                    <button class="keyboard-button">b</button>
-                    <button class="keyboard-button">n</button>
-                    <button class="keyboard-button">m</button>
-                    <button class="keyboard-button">Enter</button>
-                </div>
-            </div>
-            <div id="katamari">
-                <div id="katamari_ball" class=""><img src="marnl/katamari@2x.png" /></div>
-                <div id="katamari_prince"><img src="marnl/prince@2x.png" /></div>
-            </div>
-        
+        <div id="katamari">
+            <div id="katamari_ball" class=""><img src="marnl/katamari@2x.png" /></div>
+            <div id="katamari_prince"><img src="marnl/prince@2x.png" /></div>
+        </div>
     </div> 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-<script src="marnl/marnl.js" type="module"></script> 
+
+    <script src="marnl/marnl.js" type="module"></script>
 </body>
 </html>
