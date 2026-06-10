@@ -10,19 +10,18 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="scr/scripts.js"></script>
     </head>
 
 <body>  
     <div id="outerwrapper" class="container-fluid">
         
-        <video class="fullscreen-video" id="jaiVideo" autoplay="autoplay" muted loop><source src="src/Sequence128p.mp4" type="video/mp4"></video> 
-        <div id="bg-overlay" class="loading-screen"></div>
+        <video class="fullscreen-video" id="jaiVideo" autoplay="autoplay" muted loop playsinline><source src="src/Sequence128p.mp4" type="video/mp4"></source></video>
+        <div id="loadingScreen" class="bg-overlay loading-screen"></div>
 
         <header>
-            <img src="src/thomamasonlogoedit.png" id="logo" class="el">
-            <img src="src/portrait.png" id="portrait">
+            <img src="src/thomamasonlogoedit.png" id="logo" class="el" alt="Thomas Featherstone logo">
+            <img src="src/portrait.png" id="portrait" alt="Portrait of Thomas Featherstone">
             <div id="headertitle" class="el">
                 <h3> Thomas G. Featherstone </h3> 
                 <p>Leeds based IT professional and occasional musician.</p>
@@ -31,18 +30,17 @@
         </header>
 
         <main>
-            <div id="icons" class="el">
-                <a class="icon" href="https://www.github.com/thomamason" target="_blank"><i class="fa-brands fa-github"></i></a>
-                <a class="icon" href="https://www.codepen.io/thomamason" target="_blank"><i class="fa-brands fa-codepen"></i></a>
-                <a class="icon" href="https://www.instagram.com/thomamasonnn" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                <a class="icon" href="https://milkproblems.bandcamp.com/" target="_blank"><i class="fa-brands fa-bandcamp"></i></a>
-                <a class="icon" href="https://soundcloud.com/milkproblems" target="_blank"><i class="fa-brands fa-soundcloud"></i></a>
+            <div id="icons" class="el">                <a class="icon" href="https://www.github.com/thomamason" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                <a class="icon" href="https://www.codepen.io/thomamason" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-codepen"></i></a>
+                <a class="icon" href="https://www.instagram.com/thomamasonnn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a>
+                <a class="icon" href="https://milkproblems.bandcamp.com/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bandcamp"></i></a>
+                <a class="icon" href="https://soundcloud.com/milkproblems" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-soundcloud"></i></a>
             </div>
             <div class="container-fluid" id="banners">
 
                 <div id="bc-banner" class="banner">
-                    <div class="banner-main" id="bc-banner">
-                        <div class="bannerimg"><img src="/src/mp.jpg"></div>
+                    <div class="banner-main">
+                        <div class="bannerimg"><img src="/src/mp.jpg" alt="Milk Problems album art"></div>
                         <p> Milk Problems - Music I have made.</p>
                         <i class="fa-solid fa-angle-down" id="dropdown-icon"></i>
                     </div>
@@ -55,15 +53,21 @@
                 </div>
                 
                 <div id="yt-banner" class="banner">
-                    <div class="banner-main" id="yt-banner">
-                        <div class="bannerimg"><img src="/src/muxuk.png"></div>
+                    <div class="banner-main">
+                        <div class="bannerimg"><img src="/src/muxuk.png" alt="Pet Stories album art"></div>
                         <p> 'Pet Stories' - a collaborative project with Jaiyu Sai </p>
                         <i class="fa-solid fa-angle-down"></i>
                     </div>
                     <div id="ytmedia-dropdown" class="dropdown-content">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/0Yttof0hz_0?si=Jp4zeK3vD6vIKLv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/TWKUG8RkeDU?si=JU0yXWwwbZLY8_IG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hkJgYbBviCc?si=gFfLFJAJ4Vx51ckK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        <div class="responsive-embed">
+                            <iframe src="https://www.youtube.com/embed/0Yttof0hz_0?si=Jp4zeK3vD6vIKLv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="responsive-embed">
+                            <iframe src="https://www.youtube.com/embed/TWKUG8RkeDU?si=JU0yXWwwbZLY8_IG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                        <div class="responsive-embed">
+                            <iframe src="https://www.youtube.com/embed/hkJgYbBviCc?si=gFfLFJAJ4Vx51ckK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
                     </div>
                 </div>
             </div>

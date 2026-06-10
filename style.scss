@@ -31,12 +31,20 @@ html {
 }
 
 #loadingScreen {
+  background: rgba(0, 0, 0, 0.25);
   color: black;
   width: 100%;
   height: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 0;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
 }
 
 .fullscreen-video {
@@ -60,14 +68,14 @@ body {
   background-color: #dbdbdb;
   align-content: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
 
   @media (max-width: 768px) {
-    text-align: center; // Center-align content for smaller screens
+    text-align: center;
   }
 }
 
@@ -179,24 +187,50 @@ footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 }
 
 #bcmedia-dropdown {
-  display: none;
   flex-direction: column;
 }
 
 #ytmedia-dropdown {
-  display: none;
   flex-direction: column;
 }
 
-  .dropdown-content {
-    margin-top: 0.8vh;
-    z-index: 1;
-    iframe {
-      margin-top: 8px;
-      width: auto;
-    }
+.dropdown-content {
+  margin-top: 0.8vh;
+  z-index: 1;
+  display: none;
+  flex-direction: column;
+
+  iframe {
+    margin-top: 8px;
+    width: auto;
   }
+}
+
+.dropdown-content.open {
+  display: flex;
+}
+
+.responsive-embed {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+}
+
+.responsive-embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+#banners {
+  width: 100%;
+  max-width: 100%;
+}
