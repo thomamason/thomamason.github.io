@@ -1,0 +1,110 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SiteHeader from "../components/SiteHeader.astro";
+import SocialIcons from "../components/SocialIcons.astro";
+import MediaBanner from "../components/MediaBanner.astro";
+import VideoHero from "../components/VideoHero.astro";
+---
+
+<Layout
+    title="thomamason dot com"
+    description="Home website of Thomas G. Featherstone."
+>
+    <div id="outerwrapper" class="container-fluid">
+        <VideoHero
+            videoSrc="/src/Sequence128p.mp4"
+            poster="/images/hero-poster.jpg"
+            logoSrc="/src/thomamasonlogoedit.png"
+            logoAlt="Thomamason [dot] com"
+            subheading="təʊ-mɑː-mɑː-sʌn"
+            subsubheading=""
+        />
+
+        <main>
+            <SocialIcons />
+
+            <div class="container-fluid" id="banners">
+                <MediaBanner
+                    id="bc-banner"
+                    img="/src/mp.jpg"
+                    alt="Milk Problems album art"
+                    caption="Milk Problems - Music I have made."
+                >
+                    <iframe
+                        style="border:0; width:100%; height:42px;"
+                        src="https://bandcamp.com/EmbeddedPlayer/track=2046850880/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+                        seamless
+                    >
+                        <a
+                        href="https://milkproblems.bandcamp.com/track/sea-date">sea
+                        date by milk problems</a>
+                    </iframe>
+                    <iframe
+                        style="border:0; width:100%; height:42px;"
+                        src="https://bandcamp.com/EmbeddedPlayer/track=954573231/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+                        seamless
+                    >
+                        <a
+                        href="https://milkproblems.bandcamp.com/track/weird-worship-weirdest-worship-ver-1420">weird
+                        worship (weirdest worship ver 1.4.20) by milk
+                        problems</a>
+                    </iframe>
+                    <iframe
+                        style="border:0; width:100%; height:42px;"
+                        src="https://bandcamp.com/EmbeddedPlayer/album=628731983/size=small/bgcol=ffffff/linkcol=0687f5/track=2543285892/transparent=true/"
+                        seamless
+                    >
+                        <a
+                        href="https://milkproblems.bandcamp.com/album/vol-1-wasteland">vol
+                        1 : wasteland by S H I V V</a>
+                    </iframe>
+                    <iframe
+                        style="border:0; width:100%; height:42px;"
+                        src="https://bandcamp.com/EmbeddedPlayer/track=88539351/size=small/bgcol=ffffff/linkcol=0687f5/transparent=true/"
+                        seamless
+                    >
+                        <a
+                        href="https://milkproblems.bandcamp.com/track/clinic-hospice">_clinic
+                        / hospice by milk problems</a>
+                    </iframe>
+                </MediaBanner>
+
+                <MediaBanner
+                    id="yt-banner"
+                    img="/src/muxuk.png"
+                    alt="Pet Stories album art"
+                    caption="'Pet Stories' - a collaborative project with Jaiyu Sai"
+                >
+                    <div class="responsive-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/0Yttof0hz_0?si=Jp4zeK3vD6vIKLv4"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="responsive-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/TWKUG8RkeDU?si=JU0yXWwwbZLY8_IG"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="responsive-embed">
+                        <iframe
+                            src="https://www.youtube.com/embed/hkJgYbBviCc?si=gFfLFJAJ4Vx51ckK"
+                            title="YouTube video player"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </MediaBanner>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        import "../scripts/dropdown.js";
+    </script>
+</Layout>

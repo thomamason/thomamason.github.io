@@ -1,3 +1,9 @@
 {
-    "compile-hero.disable-compile-files-on-did-save-code": false
+    "files.associations": {
+        "*.astro": "astro"
+    },
+    "editor.formatOnSave": true,
+    "emmet.includeLanguages": {
+        "astro": "html"
+    }
 }
