@@ -1,21 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import BackgroundVideo from "../components/BackgroundVideo.astro";
 import SiteHeader from "../components/SiteHeader.astro";
 import SocialIcons from "../components/SocialIcons.astro";
 import MediaBanner from "../components/MediaBanner.astro";
+import VideoHero from "../components/VideoHero.astro";
 ---
 
 <Layout
     title="thomamason dot com"
     description="Home website of Thomas G. Featherstone."
 >
-    <div id="outerwrapper" class="container-fluid">
-        <BackgroundVideo />
+    <SiteHeader />
 
-        <SiteHeader
-            name="Thomas G. Featherstone"
-            tagline="Leeds based IT professional and occasional musician."
+    <div id="outerwrapper" class="container-fluid">
+        <VideoHero
+            videoSrc="/src/Sequence128p.mp4"
+            poster="/images/hero-poster.jpg"
+            logoSrc="/src/thomamasonlogoedit.png"
+            logoAlt="Thomamason [dot] com"
+            subheading="toe-ma-ma-sun"
         />
 
         <main>
