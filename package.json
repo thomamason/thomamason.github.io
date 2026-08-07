@@ -25,5 +25,6 @@
   "bugs": {
     "url": "https://github.com/thomamason/thomamason.github.io/issues"
   },
-  "homepage": "https://github.com/thomamason/thomamason.github.io#readme"
+  "homepage": "https://github.com/thomamason/thomamason.github.io#readme",
+  "devDependencies": {}
 }

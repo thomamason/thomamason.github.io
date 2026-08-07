@@ -1,0 +1,21 @@
+---
+export interface Props {
+    id: string;
+    img: string;
+    alt: string;
+    caption: string;
+}
+const { id, img, alt, caption } = Astro.props;
+const dropdownId = `${id}-dropdown`;
+---
+
+<div id={id} class="banner">
+    <div class="banner-main" data-dropdown-target={dropdownId}>
+        <div class="bannerimg"><img src={img} alt={alt} /></div>
+        <p>{caption}</p>
+        <i class="fa-solid fa-angle-down"></i>
+    </div>
+    <div id={dropdownId} class="dropdown-content">
+        <slot />
+    </div>
+</div>

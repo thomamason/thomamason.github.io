@@ -1,0 +1,25 @@
+---
+export interface Props {
+    name: string;
+    tagline: string;
+}
+const { name, tagline } = Astro.props;
+---
+
+<header>
+    <img
+        src="/src/thomamasonlogoedit.png"
+        id="logo"
+        class="el"
+        alt="Thomas Featherstone logo"
+    />
+    <img
+        src="/src/portrait.png"
+        id="portrait"
+        alt="Portrait of Thomas Featherstone"
+    />
+    <div id="headertitle" class="el">
+        <h3>{name}</h3>
+        <p>{tagline}</p>
+    </div>
+</header>

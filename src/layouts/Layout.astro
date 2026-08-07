@@ -1,12 +1,13 @@
 ---
-import "../styles/global.css";
-
-interface Props {
+export interface Props {
     title: string;
     description?: string;
 }
 
-const { title, description = "Thomamason is a nerd" } = Astro.props;
+const { title, description = "Home website of Thomas G. Featherstone." } =
+    Astro.props;
+
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -14,28 +15,20 @@ const { title, description = "Thomamason is a nerd" } = Astro.props;
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title} | A memoir.</title>
         <meta name="description" content={description} />
-
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={description} />
-        <meta property="og:type" content="website" />
-
-        <link rel="icon" href="/favicon-32x32.png" />
-        <meta name="theme-color" content="#663399" />
+        <title>{title}</title>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
-            href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Sono:wght@500&display=swap"
             rel="stylesheet"
         />
+        <script
+            src="https://kit.fontawesome.com/4e36f292c2.js"
+            crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="page">
-            <main>
-                <slot />
-            </main>
-        </div>
+        <slot />
     </body>
 </html>

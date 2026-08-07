@@ -1,0 +1,33 @@
+---
+const links = [
+    { href: "https://www.github.com/thomamason", icon: "fa-brands fa-github" },
+    { href: "https://www.codepen.io/thomamason", icon: "fa-brands fa-codepen" },
+    {
+        href: "https://www.instagram.com/thomamasonnn",
+        icon: "fa-brands fa-instagram",
+    },
+    {
+        href: "https://milkproblems.bandcamp.com/",
+        icon: "fa-brands fa-bandcamp",
+    },
+    {
+        href: "https://soundcloud.com/milkproblems",
+        icon: "fa-brands fa-soundcloud",
+    },
+];
+---
+
+<div id="icons" class="el">
+    {
+        links.map((link) => (
+            <a
+                class="icon"
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <i class={link.icon} />
+            </a>
+        ))
+    }
+</div>
