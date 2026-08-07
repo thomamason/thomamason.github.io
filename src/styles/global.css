@@ -23,11 +23,11 @@ html {
     align-items: center;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     #outerwrapper {
-        padding: 10px;
+        padding: 8px;
     }
-}
+} */
 
 body {
     font-family: "Sono", sans-serif;
