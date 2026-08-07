@@ -1,7 +1,13 @@
 ---
 const links = [
-    { href: "https://www.github.com/thomamason", icon: "fa-brands fa-github" },
-    { href: "https://www.codepen.io/thomamason", icon: "fa-brands fa-codepen" },
+    {
+        href: "https://www.github.com/thomamason",
+        icon: "fa-brands fa-github",
+    },
+    {
+        href: "https://www.codepen.io/thomamason",
+        icon: "fa-brands fa-codepen",
+    },
     {
         href: "https://www.instagram.com/thomamasonnn",
         icon: "fa-brands fa-instagram",
@@ -31,3 +37,33 @@ const links = [
         ))
     }
 </div>
+
+<style>
+    #icons {
+        display: flex;
+        flex-wrap: wrap;
+        align-self: center;
+        align-content: center;
+        justify-content: space-around;
+        width: 80vw;
+        height: 45px;
+    }
+
+    #icons .icon {
+        color: #ddd6d6;
+        font-size: 30px;
+        padding: 0 8px;
+        display: flex;
+        text-decoration: none;
+    }
+
+    #icons .icon .fa-brands {
+        position: relative;
+    }
+
+    @media (max-width: 768px) {
+        #icons {
+            width: 100%;
+        }
+    }
+</style>
