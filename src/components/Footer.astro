@@ -1,0 +1,46 @@
+---
+const links = [
+    {
+        href: "/nessposting",
+        alt: "Nessposting",
+        icon: "fa-solid fa-dog",
+    },
+];
+---
+
+<div class="container-fluid" id="footer">
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="footer-content">
+                <p>
+                    &copy; {new Date().getFullYear()} Thomamason. All rights reserved.
+                </p>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="footer-content">
+                {
+                    links.map((link) => (
+                        <a
+                            href={link.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i
+                                class={link.icon}
+                                style="color: rgb(255, 212, 59);"
+                            />
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    #footer {
+        position: fixed;
+        bottom: 0;
+    }
+</style>

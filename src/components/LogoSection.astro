@@ -1,0 +1,27 @@
+---
+export interface Props {
+    logoSrc: string;
+    logoAlt?: string;
+}
+
+const { logoSrc, logoAlt = "Logo" } = Astro.props;
+---
+
+<section class="logo-section">
+    <img src={logoSrc} alt={logoAlt} class="logo-section-img" />
+</section>
+
+<style>
+    .logo-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 32px 0;
+    }
+
+    .logo-section-img {
+        width: clamp(180px, 40vw, 480px);
+        height: auto;
+    }
+</style>
