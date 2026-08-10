@@ -27,9 +27,6 @@ import "../styles/global.css";
         <script
             src="https://kit.fontawesome.com/4e36f292c2.js"
             crossorigin="anonymous"></script>
-        <script>
-            import "../scripts/dropdown.js";
-        </script>
     </head>
     <body>
         <slot />
@@ -38,7 +35,6 @@ import "../styles/global.css";
 
 <style is:global>
     html {
-        scroll-behavior: smooth;
         scroll-snap-type: y mandatory;
         height: 100%;
     }
@@ -60,6 +56,7 @@ import "../styles/global.css";
 
     .snap-section {
         scroll-snap-align: start;
+        scroll-snap-stop: always;
         min-height: 100vh;
     }
 </style>
