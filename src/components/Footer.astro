@@ -12,13 +12,6 @@ const links = [
     <div class="row">
         <div class="col-12 col-md-6">
             <div class="footer-content">
-                <p>
-                    &copy; {new Date().getFullYear()} Thomamason. All rights reserved.
-                </p>
-            </div>
-        </div>
-        <div class="col-12 col-md-6">
-            <div class="footer-content">
                 {
                     links.map((link) => (
                         <a
@@ -28,7 +21,7 @@ const links = [
                         >
                             <i
                                 class={link.icon}
-                                style="color: rgb(255, 212, 59);"
+                                style="color: rgb(114, 59, 255);"
                             />
                         </a>
                     ))
@@ -40,7 +33,9 @@ const links = [
 
 <style>
     #footer {
-        position: fixed;
-        bottom: 0;
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 20px;
     }
 </style>

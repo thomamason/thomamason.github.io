@@ -5,6 +5,7 @@ export interface Props {
     logoSrc: string;
     logoAlt?: string;
     subheading?: string;
+    subsubheading?: string;
 }
 
 const {
@@ -13,6 +14,7 @@ const {
     logoSrc,
     logoAlt = "Logo",
     subheading = "A short supporting line goes here.",
+    subsubheading = "",
 } = Astro.props;
 ---
 
