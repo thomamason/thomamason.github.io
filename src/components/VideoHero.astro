@@ -16,7 +16,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero">
+<section class="hero snap-section">
     <video autoplay muted loop playsinline poster={poster}>
         <source src={videoSrc} type="video/mp4" />
     </video>
@@ -60,7 +60,7 @@ const {
     .hero {
         position: relative;
         width: 100%;
-        height: 110vh;
+        height: 100vh;
         overflow: hidden;
         background: var(--bg, #27272e);
     }

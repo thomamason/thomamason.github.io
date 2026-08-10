@@ -5,6 +5,7 @@ import SocialIcons from "../components/SocialIcons.astro";
 import MediaBanner from "../components/MediaBanner.astro";
 import VideoHero from "../components/VideoHero.astro";
 import Footer from "../components/Footer.astro";
+import LogoSection from "../components/LogoSection.astro";
 ---
 
 <Layout
@@ -22,6 +23,10 @@ import Footer from "../components/Footer.astro";
         />
 
         <main>
+            <LogoSection
+                logoSrc="/src/thomamasonlogoedit.png"
+                logoAlt="Thomamason [dot] com"
+            />
             <SocialIcons />
 
             <div class="container-fluid" id="banners">
