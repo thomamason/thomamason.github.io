@@ -44,6 +44,8 @@ body {
     scrollbar-width: none;
     background: var(--bg, #27272e);
     height: 200vh;
+    --purple: #b462ff;
+    --green: #1beb9e;
 }
 
 body::-webkit-scrollbar {

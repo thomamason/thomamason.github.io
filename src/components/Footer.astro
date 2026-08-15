@@ -8,33 +8,19 @@ const links = [
 ];
 ---
 
-<div class="container-fluid" id="footer">
-    <div class="row">
-        <div class="col-12 col-md-6">
-            <div class="footer-content">
-                {
-                    links.map((link) => (
-                        <a
-                            href={link.href}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <i
-                                class={link.icon}
-                                style="color: rgb(114, 59, 255);"
-                            />
-                        </a>
-                    ))
-                }
-            </div>
-        </div>
-    </div>
+<div class="footer-content" id="footer">
+    {
+        links.map((link) => (
+            <a href={link.href} target="_blank" rel="noopener noreferrer">
+                <i class={link.icon} style="color: rgb(114, 59, 255);" />
+            </a>
+        ))
+    }
 </div>
 
 <style>
     #footer {
-        display: flex;
-        justify-content: flex-end;
+        display: absolute;
         width: 100%;
         padding: 20px;
     }
