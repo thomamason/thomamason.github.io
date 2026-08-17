@@ -1,0 +1,31 @@
+---
+import MediaPlayer from "./MediaPlayer.astro";
+---
+
+<section class="Gallery">
+    <div id="player">
+        <MediaPlayer />
+    </div>
+    <div id="playlist"></div>
+    <p>
+        This is a selection of artist endeavours i've undertaken in the past two
+        decades.
+    </p>
+</section>
+
+<style>
+    .Gallery {
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        /* flex-shrink: 1; */
+    }
+
+    #player {
+        /* width: 30%; */
+    }
+
+    #playlist {
+        /* width: 70%; */
+    }
+</style>

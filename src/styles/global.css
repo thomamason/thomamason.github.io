@@ -21,8 +21,7 @@
 
 html {
     height: 100%;
-    font-size: 112.5%;
-    line-height: 1.45em;
+    font-size: 100.%;
     -webkit-text-size-adjust: 100%;
     scroll-snap-type: y mandatory;
 }
