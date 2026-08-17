@@ -1,4 +1,6 @@
 ---
+import SocialIcons from "./SocialIcons.astro";
+
 export interface Props {
     logoSrc: string;
     logoAlt?: string;
@@ -9,13 +11,14 @@ const { logoSrc, logoAlt = "Logo" } = Astro.props;
 
 <section class="logo-section">
     <img src={logoSrc} alt={logoAlt} class="logo-section-img" />
+    <SocialIcons />
 </section>
 
 <style>
     .logo-section {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
         width: 100%;
         padding: 32px 0;
     }

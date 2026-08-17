@@ -20,7 +20,7 @@ html {
 #outerwrapper {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     position: absolute;
     top: 0;
     width: 100%;
@@ -38,8 +38,8 @@ body {
     margin: 0;
     padding: 0;
     background-color: #dbdbdb;
-    align-content: center;
-    justify-content: center;
+    /* align-content: center; */
+    /* justify-content: center; */
     min-height: 100vh;
     scrollbar-width: none;
     background: var(--bg, #27272e);
