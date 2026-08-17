@@ -3,5 +3,63 @@
     --white: #dbdbdb;
     --purple: #b462ff;
     --green: #1beb9e;
-    font-family: "IBM";
+
+    --breakpoint-tablet: 768px;
+    --breakpoint-desktop: 1024px;
+
+    --font-body: "IBM", serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 112.5%;
+    line-height: 1.45em;
+    -webkit-text-size-adjust: 100%;
+    scroll-snap-type: y mandatory;
+    /* height: 100%; */
+}
+
+@media only screen and (max-width: 480px) {
+    html {
+        font-size: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+#outerwrapper {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 200vh;
+    min-height: 100vh;
+    font-family: "IBM", serif;
+    font-weight: 400;
+    line-height: 1.3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+    background: var(--black);
+}
+
+.snap-section {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    min-height: 100vh;
+    padding: 8px;
 }
