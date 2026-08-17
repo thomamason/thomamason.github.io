@@ -8,6 +8,7 @@ const { title, description = "Home website of Thomas G. Featherstone." } =
     Astro.props;
 
 import "../styles/global.css";
+import Footer from "../components/Footer.astro";
 ---
 
 <!doctype html>
@@ -30,6 +31,7 @@ import "../styles/global.css";
     </head>
     <body>
         <slot />
+        <Footer />
     </body>
 </html>
 
@@ -47,11 +49,6 @@ import "../styles/global.css";
 
     main {
         flex: 1 0 auto;
-    }
-
-    footer {
-        flex-shrink: 0;
-        scroll-snap-align: none;
     }
 
     .snap-section {
