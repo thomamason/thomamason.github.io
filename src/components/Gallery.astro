@@ -6,26 +6,280 @@ import MediaPlayer from "./MediaPlayer.astro";
     <div id="player">
         <MediaPlayer />
     </div>
-    <div id="playlist"></div>
-    <p>
-        This is a selection of artist endeavours i've undertaken in the past two
-        decades.
-    </p>
+    <div id="gallery_text">
+        <p>
+            This is a selection of artistic endeavours I've undertaken in the
+            past two decades.
+            <br /><br />
+            Select a project name from the playlist to listen/watch.
+        </p>
+    </div>
+    <div id="playlist">
+        <p>Audio:</p>
+        <ul>
+            <li id="splutter" data-key="splutter">Splutter</li>
+            <li id="ploughlines" data-key="ploughlines">Plough Lines</li>
+            <li id="milkproblems" data-key="milkproblems">milk problems</li>
+            <li id="shivv" data-key="shivv">S H I V V</li>
+            <li id="ftwih" data-key="ftwih">ftwihathhtts</li>
+        </ul>
+
+        <p>Video:</p>
+        <ul>
+            <li id="zoi">tomu et zoi</li>
+        </ul>
+
+        <p>Web:</p>
+        <ul>
+            <li>
+                <a href="www.longtimeg.one" target="_blank">longtimeg.one</a>
+            </li>
+        </ul>
+    </div>
 </section>
 
 <style>
     .Gallery {
         display: flex;
         flex-direction: row;
-        /* flex-wrap: wrap; */
-        /* flex-shrink: 1; */
+        @media (max-width: 768px) {
+            align-items: center;
+            flex-direction: column;
+        }
     }
 
     #player {
-        /* width: 30%; */
+        width: 30%;
+    }
+
+    #gallery_text {
+        width: 45%;
+        #gallery-play-btn {
+            color: var(--green);
+            text-decoration: none;
+        }
     }
 
     #playlist {
-        /* width: 70%; */
+        width: 25%;
+        p {
+            color: var(--purple);
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem 0;
+        }
+        li {
+            cursor: pointer;
+        }
+        li[data-key]:hover {
+            color: var(--green);
+        }
+        li.active {
+            color: var(--green);
+        }
+        a {
+            color: var(--white);
+            text-decoration: none;
+        }
+    }
+
+    #gallery-text-controls {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    #gallery-text-controls button,
+    #gallery-text-controls a {
+        background: none;
+        border: none;
+        font-family: var(--font-body);
+        font-size: 1rem;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    #gallery-play-btn {
+        color: var(--purple);
+    }
+    #gallery-source-btn {
+        color: var(--green);
+    }
+
+    #now-playing-track {
+        color: var(--purple);
+        font-size: 0.9em;
     }
 </style>
+
+<script>
+    type Track = { src: string; title: string };
+    type Group = { text: string; source: string; tracks: Track[] };
+
+    const groups: Record<string, Group> = {
+        splutter: {
+            text: "Splutter — a short series exploring texture and noise.",
+            source: "#",
+            tracks: [
+                { src: "/audio/splutter-1.mp3", title: "Splutter (Part 1)" },
+                { src: "/audio/splutter-2.mp3", title: "Splutter (Part 2)" },
+                { src: "/audio/splutter-3.mp3", title: "Splutter (Part 3)" },
+            ],
+        },
+        ploughlines: {
+            text: "Plough Lines — field recordings woven into a slow-building set.",
+            source: "#",
+            tracks: [
+                { src: "/audio/ploughlines-1.mp3", title: "Plough Lines I" },
+                { src: "/audio/ploughlines-2.mp3", title: "Plough Lines II" },
+            ],
+        },
+        milkproblems: {
+            text: "milk problems — lo-fi sketches, recorded in a few takes.",
+            source: "#",
+            tracks: [
+                {
+                    src: "public/src/milk problems - sea date.mp3",
+                    title: "sea date (2016)",
+                },
+                {
+                    src: "/audio/milkproblems-2.mp3",
+                    title: "milk problems (b)",
+                },
+                {
+                    src: "/audio/milkproblems-3.mp3",
+                    title: "milk problems (c)",
+                },
+            ],
+        },
+        shivv: {
+            text: "S H I V V — an ambient study in three movements.",
+            source: "#",
+            tracks: [
+                {
+                    src: "public/src/milk problems - weird worship (weirdest worship).mp3",
+                    title: "S H I V V — weird worship (weirdest worship)",
+                },
+                { src: "/audio/shivv-2.mp3", title: "S H I V V — ii" },
+                { src: "/audio/shivv-3.mp3", title: "S H I V V — iii" },
+            ],
+        },
+        ftwih: {
+            text: "ftwihathhtts — replace with real copy.",
+            source: "#",
+            tracks: [
+                { src: "/audio/ftwih-1.mp3", title: "ftwihathhtts (1)" },
+                { src: "/audio/ftwih-2.mp3", title: "ftwihathhtts (2)" },
+            ],
+        },
+    };
+
+    const galleryText =
+        document.querySelector<HTMLDivElement>("#gallery_text")!;
+    const listItems = Array.from(
+        document.querySelectorAll<HTMLLIElement>("#playlist li[data-key]"),
+    );
+
+    let currentGroupKey: string | null = null;
+    let currentTrackIndex = -1;
+    let isPlaying = false;
+
+    function setActiveItem() {
+        listItems.forEach((li) => li.classList.remove("active"));
+        listItems
+            .find((li) => li.dataset.key === currentGroupKey)
+            ?.classList.add("active");
+    }
+
+    function renderText() {
+        if (!currentGroupKey) return;
+        const group = groups[currentGroupKey];
+        const track = group.tracks[currentTrackIndex];
+
+        galleryText.innerHTML = `
+            <div id="gallery-text-controls">
+                <button id="gallery-play-btn">${
+                    isPlaying ? "[stop]" : "[play]"
+                }</button>
+                <a id="gallery-source-btn" href="${group.source}" target="_blank">[source]</a>
+            </div>
+            <p>${group.text}</p>
+            <p id="now-playing-track">Now playing: ${track.title} (${
+                currentTrackIndex + 1
+            }/${group.tracks.length})</p>
+        `;
+    }
+
+    // `autoplay` controls whether MediaPlayer should start playback immediately.
+    function playTrack(
+        groupKey: string,
+        trackIndex: number,
+        autoplay: boolean,
+    ) {
+        const group = groups[groupKey];
+        if (!group) return;
+        currentGroupKey = groupKey;
+        currentTrackIndex =
+            ((trackIndex % group.tracks.length) + group.tracks.length) %
+            group.tracks.length;
+
+        const track = group.tracks[currentTrackIndex];
+        isPlaying = autoplay;
+        renderText();
+        setActiveItem();
+
+        document.dispatchEvent(
+            new CustomEvent("track:load", {
+                detail: { src: track.src, title: track.title, autoplay },
+            }),
+        );
+    }
+
+    listItems.forEach((li) => {
+        li.addEventListener("click", () => {
+            const key = li.dataset.key!;
+            // Selecting an item loads it but does NOT start playback.
+            playTrack(key, 0, false);
+        });
+    });
+
+    // Delegated click handling for the play button rendered inside gallery_text
+    galleryText.addEventListener("click", (e) => {
+        const target = e.target as HTMLElement;
+        if (target.id === "gallery-play-btn") {
+            if (!currentGroupKey) return;
+            document.dispatchEvent(new CustomEvent("track:toggle"));
+        }
+    });
+
+    // prev/next from MediaPlayer — step within the current group,
+    // preserving whatever the current play/pause state was.
+    document.addEventListener("track:nav", (e: Event) => {
+        const { direction } = (e as CustomEvent).detail;
+        if (!currentGroupKey) {
+            const firstKey = listItems[0]?.dataset.key;
+            if (firstKey) playTrack(firstKey, 0, false);
+            return;
+        }
+        playTrack(
+            currentGroupKey,
+            currentTrackIndex + (direction === "next" ? 1 : -1),
+            isPlaying,
+        );
+    });
+
+    // auto-advance to the next track in the group when one ends —
+    // keeps playing, since the listener already opted into playback.
+    document.addEventListener("track:ended", () => {
+        if (!currentGroupKey) return;
+        playTrack(currentGroupKey, currentTrackIndex + 1, true);
+    });
+
+    // keep the gallery_text play button label in sync with MediaPlayer's state
+    document.addEventListener("player:state", (e: Event) => {
+        isPlaying = (e as CustomEvent).detail.playing;
+        const btn =
+            document.querySelector<HTMLButtonElement>("#gallery-play-btn");
+        if (btn) btn.textContent = isPlaying ? "[stop]" : "[play]";
+    });
+</script>

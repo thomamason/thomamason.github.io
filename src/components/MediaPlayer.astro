@@ -3,17 +3,24 @@
 ---
 
 <section class="media-player">
-    <span></span>
-    <button class="green">[prev]</button>
-    <button class="purple">[play]</button>
-    <button class="green">[next]</button>
-    <button class="purple">[stop]</button>
+    <audio id="audio-el" preload="none"></audio>
+    <span id="now-playing"></span>
+    <button id="prev-btn" class="green">[prev]</button>
+    <button id="play-btn" class="purple">[play]</button>
+    <button id="next-btn" class="green">[next]</button>
+    <button id="stop-btn" class="purple">[stop]</button>
 </section>
 
 <style>
     .media-player {
         display: flex;
         flex-wrap: wrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    #now-playing {
+        width: 100%;
+        font-family: var(--font-body);
     }
     .green {
         color: var(--green);
@@ -31,3 +38,69 @@
         cursor: pointer;
     }
 </style>
+
+<script>
+    const audio = document.querySelector<HTMLAudioElement>("#audio-el")!;
+    const nowPlaying = document.querySelector("#now-playing")!;
+    const playBtn = document.querySelector<HTMLButtonElement>("#play-btn")!;
+    const prevBtn = document.querySelector<HTMLButtonElement>("#prev-btn")!;
+    const nextBtn = document.querySelector<HTMLButtonElement>("#next-btn")!;
+    const stopBtn = document.querySelector<HTMLButtonElement>("#stop-btn")!;
+
+    function setPlaying(playing: boolean) {
+        playBtn.textContent = playing ? "[stop]" : "[play]";
+        document.dispatchEvent(
+            new CustomEvent("player:state", { detail: { playing } }),
+        );
+    }
+
+    function togglePlay() {
+        if (!audio.src) return;
+        if (audio.paused) {
+            audio.play();
+            setPlaying(true);
+        } else {
+            audio.pause();
+            setPlaying(false);
+        }
+    }
+
+    document.addEventListener("track:load", (e: Event) => {
+        const { src, title, autoplay } = (e as CustomEvent).detail;
+        audio.src = src;
+        nowPlaying.textContent = title;
+        if (autoplay) {
+            audio.play();
+            setPlaying(true);
+        } else {
+            setPlaying(false);
+        }
+    });
+
+    document.addEventListener("track:toggle", togglePlay);
+
+    playBtn.addEventListener("click", togglePlay);
+
+    stopBtn.addEventListener("click", () => {
+        audio.pause();
+        audio.currentTime = 0;
+        setPlaying(false);
+    });
+
+    prevBtn.addEventListener("click", () => {
+        document.dispatchEvent(
+            new CustomEvent("track:nav", { detail: { direction: "prev" } }),
+        );
+    });
+
+    nextBtn.addEventListener("click", () => {
+        document.dispatchEvent(
+            new CustomEvent("track:nav", { detail: { direction: "next" } }),
+        );
+    });
+
+    audio.addEventListener("ended", () => {
+        setPlaying(false);
+        document.dispatchEvent(new CustomEvent("track:ended"));
+    });
+</script>
