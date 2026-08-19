@@ -81,3 +81,15 @@ main {
     min-height: 100vh;
     padding: 8px;
 }
+
+button {
+    font-family: var(--font-body);
+    background: none;
+    border: none;
+    font-size: 1rem;
+
+}
+
+a {
+    text-decoration: none;
+}
