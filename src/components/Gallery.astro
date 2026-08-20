@@ -49,11 +49,11 @@ import MediaPlayer from "./MediaPlayer.astro";
     }
 
     #player {
-        width: 30%;
+        width: 40%;
     }
 
     #gallery_text {
-        width: 45%;
+        width: 60%;
         button {
             color: var(--green);
         }
@@ -64,7 +64,8 @@ import MediaPlayer from "./MediaPlayer.astro";
     }
 
     #playlist {
-        width: 25%;
+        width: auto;
+        margin: 0 5px 0 5px;
         p {
             color: var(--purple);
         }
@@ -121,7 +122,7 @@ import MediaPlayer from "./MediaPlayer.astro";
 
     const groups: Record<string, Group> = {
         splutter: {
-            text: "Splutter — a short series exploring texture and noise.",
+            text: "Splutter<br><br>This band came a little while after Plough Lines while I was playing guitar for a indiepop band. Dick Jones and his old school friend, Kento, brought me and lew onboard to play bass and drums, respectively. Over the course of 6 months we wrote about ten minutes worth of scrappy punk songs about living in Stoke (Locked in a Dungeon), living with animals (Oh Little Dog), and living with Dick Jones (Too Mad To Hang Today). There were a handful of shows, and I remember I had a really lovely bass guitar that I later disassembled for parts to fix something else. Whomp.",
             source: "#",
             tracks: [
                 { src: "/audio/splutter-1.mp3", title: "Splutter (Part 1)" },
@@ -130,7 +131,7 @@ import MediaPlayer from "./MediaPlayer.astro";
             ],
         },
         ploughlines: {
-            text: "Plough Lines — field recordings woven into a slow-building set.",
+            text: "Plough Lines <br/><br/> I met Dick Jones in 2013 not long after moving to Manchester. I spent an evening at his drinking cheap cider and listening to him recite poetry and wax lyrical about politics and classic literature. At some point in the evening, we decided we should start writing music informed by our mutual love of the music of The Van Pelt and Neil Young. We asked poyd to play drums, and seeing as we were practicing in his basement (and because he was the closest person on hand), we asked c-sinc to join us on bass. We did a few short tours, wrote about ten songs, were joined by OJB when poyd dropped out, and had a good time.",
             source: "#",
             tracks: [
                 { src: "/audio/ploughlines-1.mp3", title: "Plough Lines I" },
@@ -138,7 +139,7 @@ import MediaPlayer from "./MediaPlayer.astro";
             ],
         },
         milkproblems: {
-            text: "milk problems — lo-fi sketches, recorded in a few takes.",
+            text: "milk problems <br/><br/> Sometime in early 2014, I decided to start writing music that didn't fit the Plough Lines mould. I recorded it all myself on a terrible focusright interface on a clapped out laptop my dad gave me in a tiny box bedroom overlooking the main street in the student ghetto of Fallowfield. Either inspired by or in spite of my claustraphobic living conditions, I wrote an album of hastily-conceived rough ideas called Wasteland. This featured a cover of PDA by interpol which earned me my very first cease-and-desist email when I put it online.<br/<br><br>I later wrote 'sea date' about a dream I had about marrying no one in particular at the bottom of the ocean, and after some encouragement from friends, roped c-sinc and OJB to play some shows with me. The whole thing was over and done with in about 9 months, but we had a few laughs along the way, which is the main thing. <br><br>In writing 'sea date' I bought some brushes and the barebones of a drum kit, and joined d-rad's bands, commonplace and wet blanket. I forget many of the details of that, but I remember playing shows between Leeds and Glasgow, and recording a few songs I wrote for those projects somewhere in Salford.",
             source: "https://milkproblems.bandcamp.com/",
             tracks: [
                 {
@@ -156,19 +157,25 @@ import MediaPlayer from "./MediaPlayer.astro";
             ],
         },
         shivv: {
-            text: "S H I V V — an ambient study in three movements.",
+            text: "S H I V V <br><br> I recorded milk problems on a pirated copy of ableton, and while I was learning to use the software I made a few more electronica inspired tracks. These were all conceived as being soundtracks to some science-fiction film ideas I had in my head. Mostly what I imagined the kipple from 'Do androids dream of electric sheep' might be like.",
             source: "https://milkproblems.bandcamp.com/",
             tracks: [
                 {
                     src: "public/src/milk problems - weird worship (weirdest worship).mp3",
                     title: "S H I V V — weird worship (weirdest worship)",
                 },
-                { src: "/audio/shivv-2.mp3", title: "S H I V V — ii" },
-                { src: "/audio/shivv-3.mp3", title: "S H I V V — iii" },
+                {
+                    src: "public/src/milk problems - _clinic - hospice.mp3",
+                    title: "S H I V V — _clinic - hospice",
+                },
+                {
+                    src: "public/src/S H I V V - pacifist.mp3",
+                    title: "S H I V V — pacifist",
+                },
             ],
         },
         ftwih: {
-            text: "ftwihathhtts — replace with real copy.",
+            text: "ftwihathhtts<br><br>For This World Is Hollow And These Hands Have Touched The Sky is a slight misremembering of the title of a Star Trek TOS episode I liked. I met BK at a gig I was promoting one night and proceeded to basically live at his student house in Southampton for a year. I got him and his housemate to help me write the song 'Untitled #4, which convinced that housemate that hanging out with us was not for him. We got loz to play drums, and my old college friend whitman to write lyrics and do vocals.<br><br> I think we were probably the most obnoxious punk band on the South Coast during that time, and our live shows bordered on performance art without any semblance of artistry. It was great and I loved it. <br><br> Eventually I moved to Manchester, so we recorded the last batch of songs in Southport and called it a day. The other lads formed Cady and they are still at it to this day.",
             source: "#",
             tracks: [
                 { src: "/audio/ftwih-1.mp3", title: "ftwihathhtts (1)" },
