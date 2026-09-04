@@ -27,41 +27,54 @@ const { chars = "`¡™£¢∞§¶•ªº–≠åß∂ƒ©˙∆˚¬…æ≈ç√
         animation-delay: calc(
             var(--char-index, 0) * var(--glitch-char-stagger, 0.03s)
         );
+        font-weight: 700;
+        transform: scale(1.05);
     }
 
     @keyframes glitch-cycle {
         0% {
             content: var(--char-0);
+            opacity: 1;
         }
         10% {
             content: var(--char-1);
+            opacity: 0.6;
         }
         20% {
             content: var(--char-2);
+            opacity: 1;
         }
         30% {
             content: var(--char-3);
+            opacity: 0.6;
         }
         40% {
             content: var(--char-4);
+            opacity: 1;
         }
         50% {
             content: var(--char-5);
+            opacity: 0.6;
         }
         60% {
             content: var(--char-6);
+            opacity: 1;
         }
         70% {
             content: var(--char-7);
+            opacity: 0.6;
         }
         80% {
             content: var(--char-8);
+            opacity: 1;
         }
         90% {
             content: var(--char-9);
+            opacity: 0.6;
         }
         100% {
             content: "";
+            opacity: 0;
         }
     }
 
