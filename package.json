@@ -1,6 +1,7 @@
 {
   "dependencies": {
-    "astro": "^7.2.0"
+    "astro": "^7.2.0",
+    "splitting": "^1.1.0"
   },
   "allowScripts": {
     "esbuild@0.28.1": true

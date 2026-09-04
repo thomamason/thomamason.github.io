@@ -1,8 +1,10 @@
 ---
 import MediaPlayer from "./MediaPlayer.astro";
+import GlitchText from "./GlitchText.astro";
 ---
 
 <section class="Gallery">
+    <GlitchText />
     <div id="player">
         <MediaPlayer />
     </div>
@@ -53,6 +55,9 @@ import MediaPlayer from "./MediaPlayer.astro";
     }
 
     #gallery_text {
+        --glitch-char-stagger: 0.0015s;
+        --glitch-cycle-duration: 0.55s;
+        --glitch-group-delay-step: 0.05s;
         width: 60%;
         button {
             color: var(--green);
@@ -119,6 +124,10 @@ import MediaPlayer from "./MediaPlayer.astro";
 <script>
     type Track = { src: string; title: string };
     type Group = { text: string; source: string; tracks: Track[] };
+
+    type GlitchWindow = Window & {
+        glitchReveal: (root: HTMLElement, selector?: string) => void;
+    };
 
     const groups: Record<string, Group> = {
         splutter: {
@@ -224,9 +233,10 @@ import MediaPlayer from "./MediaPlayer.astro";
                 currentTrackIndex + 1
             }/${group.tracks.length})</p>
         `;
+
+        (window as unknown as GlitchWindow).glitchReveal(galleryText);
     }
 
-    // `autoplay` controls whether MediaPlayer should start playback immediately.
     function playTrack(
         groupKey: string,
         trackIndex: number,
@@ -254,12 +264,10 @@ import MediaPlayer from "./MediaPlayer.astro";
     listItems.forEach((li) => {
         li.addEventListener("click", () => {
             const key = li.dataset.key!;
-            // Selecting an item loads it but does NOT start playback.
             playTrack(key, 0, false);
         });
     });
 
-    // Delegated click handling for the play button rendered inside gallery_text
     galleryText.addEventListener("click", (e) => {
         const target = e.target as HTMLElement;
         if (target.id === "gallery-play-btn") {
@@ -268,8 +276,6 @@ import MediaPlayer from "./MediaPlayer.astro";
         }
     });
 
-    // prev/next from MediaPlayer — step within the current group,
-    // preserving whatever the current play/pause state was.
     document.addEventListener("track:nav", (e: Event) => {
         const { direction } = (e as CustomEvent).detail;
         if (!currentGroupKey) {
@@ -284,14 +290,11 @@ import MediaPlayer from "./MediaPlayer.astro";
         );
     });
 
-    // auto-advance to the next track in the group when one ends —
-    // keeps playing, since the listener already opted into playback.
     document.addEventListener("track:ended", () => {
         if (!currentGroupKey) return;
         playTrack(currentGroupKey, currentTrackIndex + 1, true);
     });
 
-    // keep the gallery_text play button label in sync with MediaPlayer's state
     document.addEventListener("player:state", (e: Event) => {
         isPlaying = (e as CustomEvent).detail.playing;
         const btn =

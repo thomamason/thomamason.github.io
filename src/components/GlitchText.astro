@@ -1,0 +1,111 @@
+---
+interface Props {
+    chars?: string;
+}
+
+const { chars = "`¡™£¢∞§¶•ªº–≠åß∂ƒ©˙∆˚¬…æ≈ç√∫˜µ≤≥÷/?░▒▓<>/" } = Astro.props;
+---
+
+<style is:global>
+    .glitch-text .char {
+        position: relative;
+        display: inline-block;
+        opacity: 0;
+        animation: glitch-fade-in 0.05s linear forwards;
+        animation-delay: calc(
+            (var(--char-index, 0) * var(--glitch-char-stagger, 0.03s)) +
+                (var(--count, 1) * var(--glitch-group-delay-step, 0.4s))
+        );
+    }
+
+    .glitch-text .char::before {
+        content: var(--char-0);
+        position: absolute;
+        inset: 0;
+        animation: glitch-cycle var(--glitch-cycle-duration, 0.4s) steps(10)
+            forwards;
+        animation-delay: calc(
+            var(--char-index, 0) * var(--glitch-char-stagger, 0.03s)
+        );
+    }
+
+    @keyframes glitch-cycle {
+        0% {
+            content: var(--char-0);
+        }
+        10% {
+            content: var(--char-1);
+        }
+        20% {
+            content: var(--char-2);
+        }
+        30% {
+            content: var(--char-3);
+        }
+        40% {
+            content: var(--char-4);
+        }
+        50% {
+            content: var(--char-5);
+        }
+        60% {
+            content: var(--char-6);
+        }
+        70% {
+            content: var(--char-7);
+        }
+        80% {
+            content: var(--char-8);
+        }
+        90% {
+            content: var(--char-9);
+        }
+        100% {
+            content: "";
+        }
+    }
+
+    @keyframes glitch-fade-in {
+        to {
+            opacity: 1;
+        }
+    }
+</style>
+
+<script define:vars={{ chars }}>
+    window.__glitchChars = chars;
+</script>
+
+<script>
+    import Splitting from "splitting";
+
+    const DEFAULT_CHARS = "`¡™£¢∞§¶•ªº–≠åß∂ƒ©˙∆˚¬…æ≈ç√∫˜µ≤≥÷/?░▒▓<>/";
+    const glitchChars = (window.__glitchChars ?? DEFAULT_CHARS).split("");
+
+    function glitchReveal(root, selector = "p") {
+        root.classList.add("glitch-text");
+        const targets = selector ? root.querySelectorAll(selector) : [root];
+        const results = Splitting({ target: targets, by: "chars" });
+
+        for (const result of results) {
+            for (const char of result.chars) {
+                char.style.setProperty(
+                    "--count",
+                    String(Math.random() * 5 + 1),
+                );
+                for (let g = 0; g < 10; g++) {
+                    char.style.setProperty(
+                        `--char-${g}`,
+                        `"${
+                            glitchChars[
+                                Math.floor(Math.random() * glitchChars.length)
+                            ]
+                        }"`,
+                    );
+                }
+            }
+        }
+    }
+
+    window.glitchReveal = glitchReveal;
+</script>
