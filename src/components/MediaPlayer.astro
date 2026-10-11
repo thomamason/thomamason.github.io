@@ -50,7 +50,7 @@
     const stopBtn = document.querySelector<HTMLButtonElement>("#stop-btn")!;
 
     function setPlaying(playing: boolean) {
-        playBtn.textContent = playing ? "[stop]" : "[play]";
+        playBtn.textContent = playing ? "[pause]" : "[play]";
         document.dispatchEvent(
             new CustomEvent("player:state", { detail: { playing } }),
         );
