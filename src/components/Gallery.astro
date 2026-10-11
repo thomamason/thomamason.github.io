@@ -51,7 +51,10 @@ import GlitchText from "./GlitchText.astro";
     }
 
     #player {
-        width: 40%;
+        width: 35%;
+        @media (max-width: 768px) {
+            width: 100%;
+        }
     }
 
     #gallery_text {
@@ -132,7 +135,7 @@ import GlitchText from "./GlitchText.astro";
     const groups: Record<string, Group> = {
         splutter: {
             text: "Splutter<br><br>This band came a little while after Plough Lines while I was playing guitar for a indiepop band. Dick Jones and his old school friend, Kento, brought me and lew onboard to play bass and drums, respectively. Over the course of 6 months we wrote about ten minutes worth of scrappy punk songs about living in Stoke (Locked in a Dungeon), living with animals (Oh Little Dog), and living with Dick Jones (Too Mad To Hang Today). There were a handful of shows, and I remember I had a really lovely bass guitar that I later disassembled for parts to fix something else. Whomp.",
-            source: "#",
+            source: "https://splutter.bandcamp.com/album/songs-from-the-cultural-gulag",
             tracks: [
                 { src: "/audio/splutter-1.mp3", title: "Splutter (Part 1)" },
                 { src: "/audio/splutter-2.mp3", title: "Splutter (Part 2)" },
