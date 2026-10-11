@@ -13,7 +13,7 @@ import GlitchText from "./GlitchText.astro";
             This is a selection of artistic endeavours I've undertaken in the
             past two decades.
             <br /><br />
-            Select a project name from the playlist to listen/watch.
+            Select a project name from the playlist to listen/watch. Click the source button to see more.
         </p>
     </div>
     <div id="playlist">
@@ -45,7 +45,7 @@ import GlitchText from "./GlitchText.astro";
         display: flex;
         flex-direction: row;
         @media (max-width: 768px) {
-            align-items: center;
+            /* align-items: center; */
             flex-direction: column;
         }
     }
@@ -91,6 +91,9 @@ import GlitchText from "./GlitchText.astro";
             color: var(--white);
             text-decoration: none;
         }
+         @media (max-width: 768px) {
+            width: 100%;
+            margin-top: 1rem;
     }
 
     #playlist {
@@ -156,7 +159,7 @@ import GlitchText from "./GlitchText.astro";
 
     const groups: Record<string, Group> = {
         splutter: {
-            text: "Splutter<br><br>This band came a little while after Plough Lines while I was playing guitar for a indiepop band. Dick Jones and his old school friend, Kento, brought me and lew onboard to play bass and drums, respectively. Over the course of 6 months we wrote about ten minutes worth of scrappy punk songs about living in Stoke (Locked in a Dungeon), living with animals (Oh Little Dog), and living with Dick Jones (Too Mad To Hang Today). There were a handful of shows, and I remember I had a really lovely bass guitar that I later disassembled for parts to fix something else. Whomp.",
+            text: "Splutter<br><br>egg punks pretending to be chain punks. I played bass on this one.",
             source: "https://splutter.bandcamp.com/album/songs-from-the-cultural-gulag",
             tracks: [
                 { src: "/audio/splutter-1.mp3", title: "Splutter (Part 1)" },
@@ -165,7 +168,7 @@ import GlitchText from "./GlitchText.astro";
             ],
         },
         ploughlines: {
-            text: "Plough Lines <br/><br/> I met Dick Jones in 2013 not long after moving to Manchester. I spent an evening at his drinking cheap cider and listening to him recite poetry and wax lyrical about politics and classic literature. At some point in the evening, we decided we should start writing music informed by our mutual love of the music of The Van Pelt and Neil Young. We asked poyd to play drums, and seeing as we were practicing in his basement (and because he was the closest person on hand), we asked c-sinc to join us on bass. We did a few short tours, wrote about ten songs, were joined by OJB when poyd dropped out, and had a good time.",
+            text: "Plough Lines <br/><br/> Indie-emo drawing on Neil Young guitar lines and Van Pelt lyrical sensibilities. We went through a few drummers and employed csinc on bass because he was standing there when we decided we needed one.",
             source: "#",
             tracks: [
                 { src: "/audio/ploughlines-1.mp3", title: "Plough Lines I" },
@@ -173,7 +176,7 @@ import GlitchText from "./GlitchText.astro";
             ],
         },
         milkproblems: {
-            text: "milk problems <br/><br/> Sometime in early 2014, I decided to start writing music that didn't fit the Plough Lines mould. I recorded it all myself on a terrible focusright interface on a clapped out laptop my dad gave me in a tiny box bedroom overlooking the main street in the student ghetto of Fallowfield. Either inspired by or in spite of my claustraphobic living conditions, I wrote an album of hastily-conceived rough ideas called Wasteland. This featured a cover of PDA by interpol which earned me my very first cease-and-desist email when I put it online.<br/<br><br>I later wrote 'sea date' about a dream I had about marrying no one in particular at the bottom of the ocean, and after some encouragement from friends, roped c-sinc and OJB to play some shows with me. The whole thing was over and done with in about 9 months, but we had a few laughs along the way, which is the main thing. <br><br>In writing 'sea date' I bought some brushes and the barebones of a drum kit, and joined d-rad's bands, commonplace and wet blanket. I forget many of the details of that, but I remember playing shows between Leeds and Glasgow, and recording a few songs I wrote for those projects somewhere in Salford.",
+            text: "milk problems <br/><br/> songs of no particular genre recorded into a rubbish interface in my box bedroom in fallowfield.",
             source: "https://milkproblems.bandcamp.com/",
             tracks: [
                 {
@@ -191,7 +194,7 @@ import GlitchText from "./GlitchText.astro";
             ],
         },
         shivv: {
-            text: "S H I V V <br><br> I recorded milk problems on a pirated copy of ableton, and while I was learning to use the software I made a few more electronica inspired tracks. These were all conceived as being soundtracks to some science-fiction film ideas I had in my head. Mostly what I imagined the kipple from 'Do androids dream of electric sheep' might be like.",
+            text: "S H I V V <br><br> These were all conceived as being soundtracks to some science-fiction film ideas I had in my head. Mostly what I imagined the kipple from 'Do androids dream of electric sheep' might be like.",
             source: "https://milkproblems.bandcamp.com/",
             tracks: [
                 {
@@ -209,7 +212,7 @@ import GlitchText from "./GlitchText.astro";
             ],
         },
         ftwih: {
-            text: "ftwihathhtts<br><br>For This World Is Hollow And These Hands Have Touched The Sky is a slight misremembering of the title of a Star Trek TOS episode I liked. I met BK at a DIY show I put on in 2010(?) and then proceeded to spend every waking hour at his student house in Southampton for a year. I got him and his housemate to help me write the song 'Untitled #4, which convinced the aforementioned housemate that playing music with us was not for him. We got loz to play drums, and my old college friend, Chris, to write lyrics and do vocals.<br><br> I think we were probably the most obnoxious punk band on the South Coast during that time, and our live shows bordered on performance without any semblance of artistry. It was great and I loved it. <br><br> Eventually I moved to Manchester, so we recorded the last batch of songs in Southport and called it a day. The other lads formed Cady and they are still at it to this day.",
+            text: "ftwihathhtts<br><br>juvenile screamo from the halcyon days of the early 2010s. Love your friends, die laughing.",
             source: "#",
             tracks: [
                 {
