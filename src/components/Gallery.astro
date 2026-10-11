@@ -51,11 +51,33 @@ import GlitchText from "./GlitchText.astro";
     }
 
     #player {
-        width: 35%;
-        @media (max-width: 768px) {
-            width: 100%;
+         width: 35%;
+         @media (max-width: 768px) {
+           width: 100%;
+            position: fixed;
+            left: 8px;
+            right: 8px;
+            bottom: calc(8px + env(safe-area-inset-bottom));
+            width: auto;
+            z-index: 100;
+            background: var(--black);
+            margin: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
         }
-    }
++    }
+    @media (max-width: 768px) {
+            :global(.snap-section:has(#player)) {
+                clip-path: inset(0);
+            }
+        }
+    
+        /* keep the floating player from covering the end of the page */
+        .Gallery {
+            @media (max-width: 768px) {
+                padding-bottom: 110px;
+            }
+        }
 
     #gallery_text {
         --glitch-char-stagger: 0.0015s;
